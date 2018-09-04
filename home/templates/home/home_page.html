@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags %}
+
+{% block body_class %}
+{% endblock %}
+
+{% block content %}
+  <h1>Home Page</h1>
+  {{ page.body|richtext }}
+  <p>Check out</p>
+  <ul>
+    <li>
+      <a href="member">Members</a>
+    </li>
+  </ul>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}
+{% endblock %}
+
+{% block content %}
+  <h1>People index Page - Our Members</h1>
+
+  <h2>{{ page.title }}</h2>
+  {{ page.intro|richtext }}
+
+  {% for people in peoplepages %}
+    {% with people=people.specific %}
+      <h2><a href="{% pageurl people %}">{{ people.name }}</a></h2>
+
+      {% with people.main_image as main_image %}
+        {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+      {% endwith %}
+
+{#      <p>{{ people.intro }}</p>#}
+{#      {{ people.body|richtext }}#}
+    {% endwith %}
+  {% endfor %}
+{% endblock %}

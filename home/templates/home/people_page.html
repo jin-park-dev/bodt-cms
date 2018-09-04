@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}
+{% endblock %}
+
+{% block content %}
+  <h1>Member Page</h1>
+
+  {{ page.name }}
+
+  <br/>
+
+  {% image page.main_image width-300 %}
+
+  {{ page.description|richtext }}
+
+  {% for item in page.people_images.all %}
+    <div>
+      {% image item.image fill-320x240 %}
+      <p>{{ item.caption }}</p>
+    </div>
+  {% endfor %}
+
+{% endblock %}
