@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 from modelcluster.fields import ParentalKey
 from wagtail.core.fields import RichTextField
@@ -32,12 +33,14 @@ class NewsIndexPage(Page):
 class NewsPage(Page):
 
     date = models.DateField("Post date")
-    intro = models.CharField(max_length=250)
+    intro = models.CharField(max_length=250, blank=True)
     body = RichTextField(blank=True)
+    timestamp = models.DateTimeField(default=timezone.now)
 
     content_panels = Page.content_panels + [
         FieldPanel('date'),
-        FieldPanel('body', classname="full"),
+        FieldPanel('intro'),
+        FieldPanel('body'),
         InlinePanel('news_images', label="News images"),
     ]
 

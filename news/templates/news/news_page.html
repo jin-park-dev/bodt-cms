@@ -8,20 +8,13 @@
 {% block content %}
   <h1>News Page</h1>
 
-  {{ page.name }}
+  <p>Post date: {{ page.date }}</p>
+  <p>Created date: {{ page.timestamp }}</p>
 
-  <br/>
-
-  {% image page.main_image width-300 %}
-
-  {{ page.description|richtext }}
-
-  {% for item in page.news_images.all %}
-    <div>
-      {% image item.image fill-320x240 %}
-      <p>{{ item.caption }}</p>
-    </div>
-  {% endfor %}
+  <h2>Intro</h2>
+  {{ page.intro|richtext }}
+  <h2>Body</h2>
+  {{ page.body|richtext }}
 
   <a href="{{ page.get_parent.url }}">Return to News Page</a>
 
