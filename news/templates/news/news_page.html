@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-  <h1>Member Page</h1>
+  <h1>News Page</h1>
 
   {{ page.name }}
 
@@ -16,13 +16,13 @@
 
   {{ page.description|richtext }}
 
-  {% for item in page.people_images.all %}
+  {% for item in page.news_images.all %}
     <div>
       {% image item.image fill-320x240 %}
       <p>{{ item.caption }}</p>
     </div>
   {% endfor %}
 
-  <a href="{{ page.get_parent.url }}">Return to Members Page</a>
+  <a href="{{ page.get_parent.url }}">Return to News Page</a>
 
 {% endblock %}

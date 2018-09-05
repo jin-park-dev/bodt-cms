@@ -42,6 +42,8 @@ class PeopleIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
+    subpage_types = ['PeoplePage']
+
     def get_context(self, request):
         # Update context to include only active member, ordered by newest
         context = super().get_context(request)
