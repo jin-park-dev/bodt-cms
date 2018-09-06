@@ -3,9 +3,13 @@ from django.db import models
 from modelcluster.fields import ParentalKey
 from modelcluster.models import ClusterableModel
 from wagtail.core.fields import RichTextField, StreamField
+from wagtail.contrib.forms.models import AbstractEmailForm, AbstractFormField
 
 from wagtail.core.models import Page, Orderable
-from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
+from wagtail.admin.edit_handlers import (
+    FieldPanel, FieldRowPanel,
+    InlinePanel, MultiFieldPanel
+)
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 
@@ -16,6 +20,9 @@ class HomePage(Page):
     content_panels = Page.content_panels + [
         FieldPanel('body', classname="full"),
     ]
+
+    # Event, Other pages to create on Homepage
+    subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage', 'ShowsPage', 'ContactUsPage']
 
     def __str__(self):
         return self.title
@@ -111,13 +118,31 @@ class ShowsPage(Page):
         return self.title
 
 
-class ContactUsPage(Page):
 
-    body = RichTextField()
+### CONTACT US ###
+"""
+Uses wagtail's built in class to create simple form
+"""
 
-    content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
+class ContactUsFormField(AbstractFormField):
+
+    page = ParentalKey('ContactUsPage', on_delete=models.CASCADE, related_name='form_fields')
+
+
+class ContactUsPage(AbstractEmailForm):
+
+    intro = RichTextField(blank=True)
+    thank_you_text = RichTextField(blank=True)
+
+    content_panels = AbstractEmailForm.content_panels + [
+        FieldPanel('intro', classname="full"),
+        InlinePanel('form_fields', label="Form fields"),
+        FieldPanel('thank_you_text', classname="full"),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('from_address', classname="col6"),
+                FieldPanel('to_address', classname="col6"),
+            ]),
+            FieldPanel('subject'),
+        ], "Email"),
     ]
-
-    def __str__(self):
-        return self.title
