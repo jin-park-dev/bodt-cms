@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}
+{% endblock %}
+
+{% block content %}
+  <h1>Bachata Obsesión's choreographs</h1>
+
+  <p>Post date: {{ page.date }}</p>
+  <p>Created date: {{ page.timestamp }}</p>
+
+  <h2>Choreograph</h2>
+  {{ page.title|richtext }}
+  <h2>Body</h2>
+  {{ page.body|richtext }}
+
+  <a href="{{ page.get_parent.url }}">Return to Shows Page</a>
+
+{% endblock %}

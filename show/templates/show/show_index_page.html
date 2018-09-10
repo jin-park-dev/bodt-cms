@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}
+{% endblock %}
+
+{% block content %}
+  <h1 class="text-center">Bachata Obsesión's choreographs</h1>
+
+{#  <h2 class="text-center">{{ page.title }}</h2>#}
+  <div class="text-center">{{ page.intro|richtext }}</div>
+
+  <hr>
+
+  {% for show in showpages %}
+    {% with show=show.specific %}
+      <h2><a href="{% pageurl show %}">{{ show.title }}</a></h2>
+
+      {% with show.main_image as main_image %}
+        {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+      {% endwith %}
+
+      <p>{{ show.intro }}</p>
+      {{ show.body|richtext }}
+    {% endwith %}
+  {% endfor %}
+{% endblock %}

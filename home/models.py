@@ -22,7 +22,7 @@ class HomePage(Page):
     ]
 
     # Event, Other pages to create on Homepage
-    subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage', 'ShowsPage', 'ContactUsPage']
+    subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage', 'show.ShowIndexPage', 'ContactUsPage']
 
     def __str__(self):
         return self.title
@@ -104,19 +104,6 @@ class EventPage(Page):
 
     def __str__(self):
         return self.title
-
-
-class ShowsPage(Page):
-
-    body = RichTextField()
-
-    content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
-    ]
-
-    def __str__(self):
-        return self.title
-
 
 
 ### CONTACT US ###
