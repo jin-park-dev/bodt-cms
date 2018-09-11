@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}
+{% endblock %}
+
+{% block content %}
+  <h1>Event Page</h1>
+
+  <p>Event date: {{ page.date_event }}</p>
+  {% image page.main_image width-400 %}
+  <h2>Event Name - {{ page.name }}</h2>
+  <h2>Event Address - {{ page.address }}</h2>
+  <h2>Event Detail</h2>
+  {{ page.body|richtext }}
+
+  <a href="{{ page.get_parent.url }}">Return to News Page</a>
+
+{% endblock %}

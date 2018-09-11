@@ -22,7 +22,7 @@ class HomePage(Page):
     ]
 
     # Event, Other pages to create on Homepage
-    subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage', 'show.ShowIndexPage', 'ContactUsPage']
+    subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage', 'show.ShowIndexPage', 'event.EventIndexPage', 'ContactUsPage']
 
     def __str__(self):
         return self.title
@@ -90,20 +90,6 @@ class PeoplePageGalleryImage(Orderable):
         ImageChooserPanel('image'),
         FieldPanel('caption'),
     ]
-
-
-######
-
-class EventPage(Page):
-
-    body = RichTextField()
-
-    content_panels = Page.content_panels + [
-        FieldPanel('body', classname="full"),
-    ]
-
-    def __str__(self):
-        return self.title
 
 
 ### CONTACT US ###
