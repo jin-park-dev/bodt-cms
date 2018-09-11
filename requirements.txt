@@ -8,10 +8,12 @@ chardet==3.0.4
 cryptography==2.3.1
 decorator==4.3.0
 Django==2.0.8
+django-crispy-forms==1.7.2
 django-extensions==2.1.0
 django-modelcluster==4.2
 django-taggit==0.23.0
 django-treebeard==4.3
+django-widget-tweaks==1.4.2
 djangorestframework==3.8.2
 draftjs-exporter==2.1.2
 Fabric3==1.14.post1
@@ -26,7 +28,6 @@ parso==0.3.1
 pexpect==4.6.0
 pickleshare==0.7.4
 Pillow==5.2.0
-pkg-resources==0.0.0
 prompt-toolkit==1.0.15
 ptyprocess==0.6.0
 pyasn1==0.4.4
@@ -41,7 +42,7 @@ six==1.11.0
 traitlets==4.3.2
 Unidecode==1.0.22
 urllib3==1.23
-wagtail==2.2.1
+wagtail==2.2.2
 wcwidth==0.1.7
 webencodings==0.5.1
 Willow==1.1
