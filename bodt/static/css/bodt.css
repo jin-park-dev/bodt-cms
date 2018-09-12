@@ -1,0 +1,13 @@
+.home-hero {
+  background-image: url("img/hero.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 751px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.home-news-container {
+  display: flex; }
+
+/*# sourceMappingURL=bodt.css.map */

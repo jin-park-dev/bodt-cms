@@ -12,6 +12,8 @@ from wagtail.admin.edit_handlers import (
 )
 from wagtail.images.edit_handlers import ImageChooserPanel
 
+from news.models import NewsPage
+
 
 class HomePage(Page):
 
@@ -23,6 +25,13 @@ class HomePage(Page):
 
     # Event, Other pages to create on Homepage
     subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage', 'show.ShowIndexPage', 'event.EventIndexPage', 'ContactUsPage']
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request)
+        newspages = NewsPage.objects.live().order_by('-first_published_at')[0:3]
+        print(newspages)
+        context['newspages'] = newspages
+        return context
 
     def __str__(self):
         return self.title

@@ -1,22 +1,39 @@
 {% extends "base.html" %}
 
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}
 {% endblock %}
 
 {% block content %}
-  <h1>Home Page</h1>
-  {{ page.body|richtext }}
-  <p>Check out</p>
-  <ul>
-    <li>
-      <a href="news">News</a> -
-      <a href="member">Members</a> -
-      <a href="contact">Contact</a> -
-      <a href="about-us">About Us</a> -
-      <a href="shows">Shows</a> -
-      <a href="#"><s>Events</s></a>
-    </li>
-  </ul>
+  <div class="container-fluid">
+    <div class="home-hero">
+      <h1 class="">Bachata Obsesión Dance Team</h1>
+    </div>
+
+    <div class="home-news">
+      <h1>News</h1>
+      <div class="home-news-container">
+        {% for news in newspages %}
+          <div class="d-block mx-3">
+            {% with news=news.specific %}
+              <div class="card">
+                {% with news.news_images.first as news_image %}
+                  {% if news_image %}
+                    <a href="{% pageurl news %}">
+                    {% image news_image.image max-1000x500 class="card-img-top" %}{% endif %}
+                </a>
+                {% endwith %}
+                <div class="card-body">{{ news.body|richtext|truncatewords_html:40 }}</div>
+                <div class="card-header"><a href="{% pageurl news %}">{{ news.title }}</a></div>
+              </div>
+            {% endwith %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {{ page.body|richtext }}
+    <p>Check out</p>
+  </div>
 {% endblock %}
