@@ -10,9 +10,22 @@
   align-items: center;
 }
 
-.home-news {
+// SECTIONS
+
+.home-section-news {
+  background-color: #9fcdff;
 }
+
+.home-section-events {
+  background-color: #ffdfe5;
+}
+
 
 .home-news-container {
   display: flex;
+}
+
+.home-news-container-item {
+  flex: 1 1;
+  margin: 0 1rem 0 1rem;
 }

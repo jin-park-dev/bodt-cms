@@ -13,6 +13,8 @@ from wagtail.admin.edit_handlers import (
 from wagtail.images.edit_handlers import ImageChooserPanel
 
 from news.models import NewsPage
+from event.models import EventPage
+from show.models import ShowPage
 
 
 class HomePage(Page):
@@ -28,9 +30,19 @@ class HomePage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
+
         newspages = NewsPage.objects.live().order_by('-first_published_at')[0:3]
-        print(newspages)
         context['newspages'] = newspages
+
+        eventpages = EventPage.objects.live().order_by('-first_published_at')[0:3]
+        context['eventpages'] = eventpages
+
+        peoplepages = PeoplePage.objects.live().order_by('-first_published_at')
+        context['peoplepages'] = peoplepages
+
+        showpages = ShowPage.objects.live().order_by('-first_published_at')
+        context['showpages'] = showpages
+
         return context
 
     def __str__(self):
