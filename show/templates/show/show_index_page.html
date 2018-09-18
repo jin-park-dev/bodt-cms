@@ -6,23 +6,40 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="text-center">Bachata Obsesión's choreographs</h1>
+  <div class="container-fluid">
+    <div class="show-hero">
+      <h1 class="text-center">Bachata Obsesión's choreographs</h1>
+    </div>
+    {#  <h2 class="text-center">{{ page.title }}</h2>#}
+    <div class="text-center">{{ page.intro|richtext }}</div>
 
-{#  <h2 class="text-center">{{ page.title }}</h2>#}
-  <div class="text-center">{{ page.intro|richtext }}</div>
+    <hr>
+    <div class="show-main-container">
 
-  <hr>
+      <div class="show-main-item-menu">
+      {% for show in showpages %}
+        {% with show=show.specific %}
+          <h2><a href="{% pageurl show %}">{{ show.title }}</a></h2>
 
-  {% for show in showpages %}
-    {% with show=show.specific %}
-      <h2><a href="{% pageurl show %}">{{ show.title }}</a></h2>
+          {% with show.main_image as main_image %}
+            {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+          {% endwith %}
 
-      {% with show.main_image as main_image %}
-        {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
-      {% endwith %}
+          <p>{{ show.intro }}</p>
+          {{ show.body|richtext }}
+        {% endwith %}
+      {% endfor %}
+      </div>
 
-      <p>{{ show.intro }}</p>
-      {{ show.body|richtext }}
-    {% endwith %}
-  {% endfor %}
+      <div class="show-main-item-main">
+        show main
+      </div>
+
+      <div class="show-main-item-info">
+        show footer
+      </div>
+
+    </div>
+
+  </div>
 {% endblock %}

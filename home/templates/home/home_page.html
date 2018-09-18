@@ -17,15 +17,17 @@
         {% for news in newspages %}
           <div class="home-news-container-item">
             {% with news=news.specific %}
-              <div class="card">
-                {% with news.news_images.first as news_image %}
-                  {% if news_image %}
-                    <a href="{% pageurl news %}">
-                    {% image news_image.image min-1000x1000 class="card-img-top" %}{% endif %}
-                </a>
-                {% endwith %}
-                <div class="card-body">{{ news.body|richtext|truncatewords_html:40 }}</div>
-                <div class="card-header"><a href="{% pageurl news %}">{{ news.title }}</a></div>
+              <div class="card-deck">
+                <div class="card">
+                  {% with news.news_images.first as news_image %}
+                    {% if news_image %}
+                      <a href="{% pageurl news %}">
+                      {% image news_image.image min-1000x1000 class="card-img-top" %}{% endif %}
+                  </a>
+                  {% endwith %}
+                  <div class="card-body">{{ news.body|richtext|truncatewords_html:40 }}</div>
+                  <div class="card-header"><a href="{% pageurl news %}">{{ news.title }}</a></div>
+                </div>
               </div>
             {% endwith %}
           </div>
@@ -40,15 +42,19 @@
         {% for event in eventpages %}
           <div class="home-news-container-item">
             {% with event=event.specific %}
-              <div class="card">
-                {% with event.event_images.first as event_image %}
-                  {% if event_image %}
-                    <a href="{% pageurl event %}">
-                    {% image event_image.image min-300x300 class="card-img-top" %}{% endif %}
-                </a>
-                {% endwith %}
-                <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>
-                <div class="card-header"><a href="{% pageurl event %}">{{ event.title }}</a></div>
+              <div class="card-deck">
+                <div class="card">
+                  {% with event.event_images.first as event_image %}
+                    {% if event_image %}
+                      <a href="{% pageurl event %}">
+                      {% image event_image.image original as tmp_image %}
+                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                    {% endif %}
+                  </a>
+                  {% endwith %}
+                  <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>
+                  <div class="card-header"><a href="{% pageurl event %}">{{ event.title }}</a></div>
+                </div>
               </div>
             {% endwith %}
           </div>
@@ -63,15 +69,19 @@
         {% for show in showpages %}
           <div class="home-news-container-item">
             {% with show=show.specific %}
-              <div class="card">
-                {% with show.show_images.first as show_image %}
-                  {% if show_image %}
-                    <a href="{% pageurl show %}">
-                    {% image show_image.image min-300x300 class="card-img-top" %}{% endif %}
-                </a>
-                {% endwith %}
-                <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>
-                <div class="card-header"><a href="{% pageurl show %}">{{ show.title }}</a></div>
+              <div class="card-deck">
+                <div class="card">
+                  {% with show.show_images.first as show_image %}
+                    {% if show_image %}
+                      <a href="{% pageurl show %}">
+                      {% image show_image.image original as tmp_image %}
+                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                    {% endif %}
+                  </a>
+                  {% endwith %}
+                  <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>
+                  <div class="card-header"><a href="{% pageurl show %}">{{ show.title }}</a></div>
+                </div>
               </div>
             {% endwith %}
           </div>
@@ -82,19 +92,24 @@
 
     <div class="home-section-members">
       <h1>Our team</h1>
-      <div class="home-news-container">
+      <div class="home-members-container">
         {% for people in peoplepages %}
           <div class="home-news-container-item">
             {% with people=people.specific %}
-              <div class="card">
-                {% with people.people_images.first as people_image %}
-                  {% if people_image %}
-                    <a href="{% pageurl people %}">
-                    {% image people_image.image min-300x300 class="card-img-top" %}{% endif %}
-                </a>
-                {% endwith %}
-                <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>
-                <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
+              <div class="card-deck">
+                <div class="card">
+                  {% with people.people_images.first as people_image %}
+                    {% if people_image %}
+                      <a href="{% pageurl people %}">
+                      {% image people_image.image original as tmp_image %}
+                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+
+                    {% endif %}
+                  </a>
+                  {% endwith %}
+                  <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>
+                  <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
+                </div>
               </div>
             {% endwith %}
           </div>
