@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     'widget_tweaks',
     'crispy_forms',
+    'embed_video',
 ]
 
 MIDDLEWARE = [

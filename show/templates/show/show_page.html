@@ -1,21 +1,62 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags embed_video_tags %}
 
 {% block body_class %}
 {% endblock %}
 
 {% block content %}
-  <h1>Bachata Obsesión's choreographs</h1>
+  <div class="container-fluid">
+    <div class="show-hero">
+      <h1 class="text-center">Bachata Obsesión's choreographs</h1>
+    </div>
+    {#  <h2 class="text-center">{{ page.title }}</h2>#}
+    <div class="text-center">{{ page.intro|richtext }}</div>
 
-  <p>Post date: {{ page.date }}</p>
-  <p>Created date: {{ page.timestamp }}</p>
+    <hr>
+    <div class="show-main-container">
 
-  <h2>Choreograph</h2>
-  {{ page.title|richtext }}
-  <h2>Body</h2>
-  {{ page.body|richtext }}
+      <div class="show-main-item-menu">
+        <div class="showspages-container-wrapper">
+          <div class="showspages-container">
+            {% for show in showpages %}
+              <div class="showspages-container-item">
+                {% with show=show.specific %}
+                  <h2><a href="{% pageurl show %}">{{ show.title }}</a></h2>
 
-  <a href="{{ page.get_parent.url }}">Return to Shows Page</a>
+                  {% with show.main_image as main_image %}
+                    {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+                  {% endwith %}
 
+                  <p>{{ show.intro }}</p>
+                  {#                {{ show.body|richtext }}#}
+
+                {% endwith %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="show-main-item-main">
+        show main
+        {{ showpage_first.specific.intro }}
+        {{ showpage_first.specific.date }}
+        {% video showpage_first.specific.video as my_video %}
+        {#        {% video my_video "large" %}#}
+        {% video my_video '800x600' %}
+
+        {% endvideo %}
+
+      </div>
+
+      <div class="show-main-item-info">
+        <div class="show-main-item-info-container">
+          <div class="show-main-item-info-container-item">{{ showpage_first.specific.body|richtext }}</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 {% endblock %}

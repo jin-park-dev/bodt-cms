@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags wagtailimages_tags embed_video_tags %}
+
+{% block body_class %}
+{% endblock %}
+
+{% block content %}
+  <h1>Bachata Obsesión's choreographs</h1>
+
+  <p>Post date: {{ page.date }}</p>
+  <p>Created date: {{ page.timestamp }}</p>
+
+  <h2>Choreograph</h2>
+  {{ page.title|richtext }}
+  <h2>Body</h2>
+  {{ page.body|richtext }}
+
+  <h2>Vid</h2>
+
+  The video tag:
+  {% video page.video as my_video %}
+  URL: {{ my_video.url }}
+  Thumbnail: {{ my_video.thumbnail }}
+  Backend: {{ my_video.backend }}
+
+{#  {% video my_video "large" %}#}
+  {% video my_video '800x600' %}
+
+  Or embed shortcut:
+  {% endvideo %}
+
+
+  <a href="{{ page.get_parent.url }}">Return to Shows Page</a>
+
+{% endblock %}

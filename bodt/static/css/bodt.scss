@@ -88,9 +88,46 @@
 .show-main-item-main { grid-area: main; background-color: #e9ffc5;  }
 .show-main-item-info { grid-area: info; background-color: #ffd2ef;  }
 
+.show-main-item-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  //height: 100%;
+}
+
+.showspages-container-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.showspages-container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  //align-content: center;
+
+  //width: 80%;
+}
+
+.showspages-container-item {
+  //flex: 0 1 auto;
+  //border-style: solid;
+  //border-width: 1px;
+}
+
+.show-main-item-info-container-item {
+  align-self: flex-end;
+}
+
 .show-main-container {
   display: grid;
   grid-template-areas:
+    'menu main main main main'
+    'menu main main main main'
     'menu main main main main'
     'menu main main main main'
     'menu main main main main'

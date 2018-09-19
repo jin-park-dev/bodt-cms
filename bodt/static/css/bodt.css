@@ -54,8 +54,28 @@
   grid-area: info;
   background-color: #ffd2ef; }
 
+.show-main-item-info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.showspages-container-wrapper {
+  display: flex;
+  justify-content: center;
+  height: 100%; }
+
+.showspages-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.show-main-item-info-container-item {
+  align-self: flex-end; }
+
 .show-main-container {
   display: grid;
-  grid-template-areas: "menu main main main main" "menu main main main main" "menu main main main main" "menu info info info info"; }
+  grid-template-areas: "menu main main main main" "menu main main main main" "menu main main main main" "menu main main main main" "menu main main main main" "menu info info info info"; }
 
 /*# sourceMappingURL=bodt.css.map */
