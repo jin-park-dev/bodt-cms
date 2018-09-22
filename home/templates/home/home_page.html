@@ -22,8 +22,11 @@
                   {% with news.news_images.first as news_image %}
                     {% if news_image %}
                       <a href="{% pageurl news %}">
-                      {% image news_image.image min-1000x1000 class="card-img-top" %}{% endif %}
-                  </a>
+{#                      {% image news_image.image min-1000x1000 class="card-img-top" %}#}
+                        {% image news_image.image original as tmp_image %}
+                        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                      </a>
+                    {% endif %}
                   {% endwith %}
                   <div class="card-body">{{ news.body|richtext|truncatewords_html:40 }}</div>
                   <div class="card-header"><a href="{% pageurl news %}">{{ news.title }}</a></div>
@@ -47,10 +50,10 @@
                   {% with event.event_images.first as event_image %}
                     {% if event_image %}
                       <a href="{% pageurl event %}">
-                      {% image event_image.image original as tmp_image %}
-                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                        {% image event_image.image original as tmp_image %}
+                        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                      </a>
                     {% endif %}
-                  </a>
                   {% endwith %}
                   <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>
                   <div class="card-header"><a href="{% pageurl event %}">{{ event.title }}</a></div>
@@ -74,10 +77,10 @@
                   {% with show.show_images.first as show_image %}
                     {% if show_image %}
                       <a href="{% pageurl show %}">
-                      {% image show_image.image original as tmp_image %}
-                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                        {% image show_image.image original as tmp_image %}
+                        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                      </a>
                     {% endif %}
-                  </a>
                   {% endwith %}
                   <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>
                   <div class="card-header"><a href="{% pageurl show %}">{{ show.title }}</a></div>
@@ -101,11 +104,10 @@
                   {% with people.people_images.first as people_image %}
                     {% if people_image %}
                       <a href="{% pageurl people %}">
-                      {% image people_image.image original as tmp_image %}
-                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
-
+                        {% image people_image.image original as tmp_image %}
+                        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                      </a>
                     {% endif %}
-                  </a>
                   {% endwith %}
                   <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>
                   <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>

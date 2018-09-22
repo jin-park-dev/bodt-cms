@@ -15,9 +15,10 @@
 //
 
 .home-hero {
-  background-image:url("img/home-hero.png");
+  //background-image:url("img/home-hero.png");
+  background-image:url("img/home-hero.jpg");
   background-repeat:no-repeat;
-  //background-size:100%;
+  //background-size:55%;
   background-size:cover;
   height: 751px;
 
@@ -71,9 +72,8 @@
 //
 
 .show-hero {
-  background-image:url("img/show-hero.jpg");
+  background-image:url("img/show-hero.png");
   background-repeat:no-repeat;
-  //background-size:100%;
   background-size:cover;
   height: 751px;
 
@@ -132,4 +132,93 @@
     'menu main main main main'
     'menu main main main main'
     'menu info info info info'
+}
+
+
+
+//
+// CONTACT US PAGE //
+//
+
+.contact-hero {
+  background-image:url("img/contact us-home.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  height: 751px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: whitesmoke;
+}
+
+
+//
+// NEWS PAGE //
+//
+
+.news-hero {
+  background-image:url("img/news-hero.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  height: 751px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: whitesmoke;
+}
+
+
+//
+// MEMBERS PAGE //
+//
+
+.members-hero {
+  background-image:url("img/members-hero.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  height: 751px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: whitesmoke;
+}
+
+
+//
+// EVENTS PAGE //
+//
+
+.events-hero {
+  background-image:url("img/events-hero.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  height: 751px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: whitesmoke;
+}
+
+//
+//
+//
+// SHARED COMMON CSS //
+//
+//
+//
+//
+.contact-hero > h1,
+.home-hero > h1,
+.news-hero > h1,
+.members-hero > h1,
+.show-hero > h1 {
+  font-size: 70px;
 }

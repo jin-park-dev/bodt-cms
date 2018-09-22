@@ -6,15 +6,22 @@
 {% endblock %}
 
 {% block content %}
-  <div class="container">
-    <h1>{{ page.title }}</h1>
-    {{ page.intro|richtext }}
-    <form action="{% pageurl page %}" method="POST">
-      {% csrf_token %}
-      {% crispy form %}
-      <input type="submit">
-    </form>
-    <br />
-    <a href="{{ page.get_parent.url }}">Return to Home Page</a>
+  <div class="container-fluid">
+
+    <div class="contact-hero">
+      <h1 class="">Contact Us</h1>
+    </div>
+
+    <div class="container">
+      <h1>{{ page.title }}</h1>
+      {{ page.intro|richtext }}
+      <form action="{% pageurl page %}" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-primary" >Submit</button>
+      </form>
+      <br />
+      <a href="{{ page.get_parent.url }}">Return to Home Page</a>
+    </div>
   </div>
 {% endblock %}

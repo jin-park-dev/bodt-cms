@@ -6,23 +6,35 @@
 {% endblock %}
 
 {% block content %}
-  <h1 class="text-center">News index Page - Latest Updates</h1>
 
-  <h2 class="text-center">{{ page.title }}</h2>
-  <div class="text-center">{{ page.intro|richtext }}</div>
+    <div class="news-hero">
+      <h1 class="">News - Our latest Updates</h1>
+    </div>
 
-  <hr>
+  <div class="container-fluid">
 
-  {% for news in newspages %}
-    {% with news=news.specific %}
-      <h2><a href="{% pageurl news %}">{{ news.title }}</a></h2>
+{#    <h2 class="text-center">{{ page.title }}</h2>#}
+{#    <div class="text-center">{{ page.intro|richtext }}</div>#}
 
-      {% with news.main_image as main_image %}
-        {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
+  </div>
+
+  <div class="container">
+    {% for news in newspages %}
+      {% with news=news.specific %}
+        <div class="text-center">
+          <h2><a href="{% pageurl news %}">{{ news.title }}</a></h2>
+        </div>
+        <div class="text-center">
+          {% with news.main_image as main_image %}
+  {#          {% if main_image %}{% image main_image fill-1000x1000 %}{% endif %}#}
+            {% if main_image %}{% image main_image width-1000 %}{% endif %}
+          {% endwith %}
+        </div>
+        <p>{{ news.intro }}</p>
+        {{ news.body|richtext|truncatewords_html:60 }}
+        <hr>
       {% endwith %}
+    {% endfor %}
+  </div>
 
-      <p>{{ news.intro }}</p>
-      {{ news.body|richtext }}
-    {% endwith %}
-  {% endfor %}
 {% endblock %}

@@ -6,22 +6,48 @@
 {% endblock %}
 
 {% block content %}
-  <h1>People index Page - Our Members</h1>
-
+  <div class="members-hero">
+    <h1 class="">Our Team</h1>
+  </div>
   <h2>{{ page.title }}</h2>
   {{ page.intro|richtext }}
   <hr>
 
-  {% for people in peoplepages %}
-    {% with people=people.specific %}
-      <h2><a href="{% pageurl people %}">{{ people.name }}</a></h2>
-
-      {% with people.main_image as main_image %}
-        {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
-      {% endwith %}
-
+{#  {% for people in peoplepages %}#}
+{#    {% with people=people.specific %}#}
+{#      <h2><a href="{% pageurl people %}">{{ people.name }}</a></h2>#}
+{##}
+{#      {% with people.main_image as main_image %}#}
+{#        {% if main_image %}{% image main_image fill-160x100 %}{% endif %}#}
+{#      {% endwith %}#}
+{##}
 {#      <p>{{ people.intro }}</p>#}
 {#      {{ people.body|richtext }}#}
-    {% endwith %}
+{#    {% endwith %}#}
+{#  {% endfor %}#}
+
+  <div class="home-members-container">
+  {% for people in peoplepages %}
+    <div class="home-news-container-item">
+      {% with people=people.specific %}
+        <div class="card-deck">
+          <div class="card">
+            <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
+            {% with people.people_images.first as people_image %}
+              {% if people_image %}
+                <a href="{% pageurl people %}">
+                  {% image people_image.image original as tmp_image %}
+                  <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                </a>
+              {% endif %}
+            {% endwith %}
+            <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>
+            <div class="card-footer"><a href="{% pageurl people %}">Read more</a></div>
+          </div>
+        </div>
+      {% endwith %}
+    </div>
   {% endfor %}
+  </div>
+
 {% endblock %}
