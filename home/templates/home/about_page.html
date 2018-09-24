@@ -6,8 +6,12 @@
 {% endblock %}
 
 {% block content %}
-  <h1>About Us</h1>
-  {{ page.body|richtext }}
+  <div class="aboutus-hero">
+    <h1>About Us</h1>
+  </div>
+  <div class="">
+    {{ page.body|richtext }}
+  </div>
   <p>Check out</p>
   <a href="{{ page.get_parent.url }}">Return to Home Page</a>
 {% endblock %}

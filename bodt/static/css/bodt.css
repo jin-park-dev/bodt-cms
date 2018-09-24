@@ -118,10 +118,21 @@
   align-items: center;
   color: whitesmoke; }
 
+.aboutus-hero {
+  background-image: url("img/events-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 751px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke; }
+
 .contact-hero > h1,
 .home-hero > h1,
 .news-hero > h1,
 .members-hero > h1,
+.aboutus-hero > h1,
 .show-hero > h1 {
   font-size: 70px; }
 
