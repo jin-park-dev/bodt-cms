@@ -118,6 +118,9 @@
   align-items: center;
   color: whitesmoke; }
 
+.events-body {
+  display: flex; }
+
 .aboutus-hero {
   background-image: url("img/events-hero.jpg");
   background-repeat: no-repeat;

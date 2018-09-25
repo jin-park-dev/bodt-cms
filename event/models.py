@@ -32,6 +32,7 @@ class EventPage(Page):
     date_event = models.CharField("Event date", max_length=250)
     name = models.CharField(max_length=250, blank=True)
     address = models.CharField(max_length=250, blank=True)
+    short_intro = RichTextField(blank=True)
     body = RichTextField(blank=True)
     timestamp = models.DateTimeField(default=timezone.now)
 
@@ -40,6 +41,7 @@ class EventPage(Page):
         FieldPanel('date_event'),
         FieldPanel('name'),
         FieldPanel('address'),
+        FieldPanel('short_intro'),
         FieldPanel('body'),
         InlinePanel('event_images', label="Event images"),
     ]

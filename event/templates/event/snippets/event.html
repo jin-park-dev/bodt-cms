@@ -1,0 +1,21 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+{% with event=event.specific %}
+  <div class="text-center">
+    {% with event.main_image as main_image %}
+      <a href="{% pageurl event %}">
+        {% image main_image original as tmp_image %}
+        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+      </a>
+    {% endwith %}
+  </div>
+
+  <div>{{ event.name }}</div>
+  <div>Date: {{ event.date_event }}</div>
+  <div>Location: {{ event.address }}</div>
+  <hr>
+  <p>{{ event.short_intro|richtext }}</p>
+{#  {{ event.body|richtext|truncatewords_html:60 }}#}
+  <hr>
+{% endwith %}

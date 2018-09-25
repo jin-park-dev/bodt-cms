@@ -15,65 +15,27 @@
 
   <hr>
 
-{#  {% for event in eventpages %}#}
-{#    {% with event=event.specific %}#}
-{#      <h2><a href="{% pageurl event %}">{{ event.title }}</a></h2>#}
-{##}
-{#      {% with event.main_image as main_image %}#}
-{#        {% if main_image %}{% image main_image fill-160x100 %}{% endif %}#}
-{#      {% endwith %}#}
-{##}
-{#      <p>{{ event.intro }}</p>#}
-{#      {{ event.body|richtext }}#}
-{#    {% endwith %}#}
-{#  {% endfor %}#}
-
-{#  <div class="home-members-container">#}
-{#    {% for event in eventpages %}#}
-{#      <div class="home-news-container-item">#}
-{#        {% with event=event.specific %}#}
-{#          <div class="card-deck">#}
-{#            <div class="card">#}
-{#              <div class="card-header"><a href="{% pageurl event %}">{{ event.title }}</a></div>#}
-{#              {% with event.event_images.first as event_image %}#}
-{#                {% if event_image %}#}
-{#                  <a href="{% pageurl event %}">#}
-{#                    {% image event_image.image original as tmp_image %}#}
-{#                    <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>#}
-{#                  </a>#}
-{#                {% endif %}#}
-{#              {% endwith %}#}
-{#              <div class="card-body">{{ event.description|richtext|truncatewords_html:40 }}</div>#}
-{#              <div class="card-footer"><a href="{% pageurl event %}">Read more</a></div>#}
-{#            </div>#}
-{#          </div>#}
-{#        {% endwith %}#}
-{#      </div>#}
-{#    {% endfor %}#}
-{#  </div>#}
-
-  <div class="container">
+  <div class="container-fluid">
     {% for event in eventpages %}
-      {% with event=event.specific %}
-        <div class="text-center">
-          <h2><a href="{% pageurl event %}">{{ event.title }}</a></h2>
+      {% if forloop.counter0|divisibleby:2 %}
+        <div class="row" style="background-color: #f8d7da">
+          <div class="col-4">
+            {% include 'event/snippets/event.html' %}
+          </div>
+          <div class="col-8">
+            Some info here? Description? Quote?
+          </div>
         </div>
-        <div class="text-center">
-          {% with event.main_image as main_image %}
-            {#          {% if main_image %}{% image main_image fill-1000x1000 %}{% endif %}#}
-            {% if main_image %}{% image main_image width-1000 %}{% endif %}
-          {% endwith %}
+      {% else %}
+        <div class="row" style="background-color: #a4c1f8">
+          <div class="col-8">
+            Some info here? Description? Quote?
+          </div>
+          <div class="col-4">
+            {% include 'event/snippets/event.html' %}
+          </div>
         </div>
-
-        <div>{{ event.name }}</div>
-        <div>Date: {{ event.date_event }}</div>
-        <div>Location: {{ event.address }}</div>
-
-        <p>{{ event.intro }}</p>
-        {{ event.body|richtext|truncatewords_html:60 }}
-        <hr>
-      {% endwith %}
+      {% endif %}
     {% endfor %}
   </div>
-  
 {% endblock %}
