@@ -9,6 +9,7 @@ from wagtail.admin.edit_handlers import FieldPanel, InlinePanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 from embed_video.fields import EmbedVideoField
 
+
 class ShowIndexPage(Page):
     intro = RichTextField(blank=True)
 

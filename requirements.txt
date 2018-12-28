@@ -1,3 +1,4 @@
+appnope==0.1.0
 asn1crypto==0.24.0
 backcall==0.1.0
 bcrypt==3.1.4
@@ -7,7 +8,7 @@ cffi==1.11.5
 chardet==3.0.4
 cryptography==2.3.1
 decorator==4.3.0
-Django==2.0.8
+Django==2.1.4
 django-crispy-forms==1.7.2
 django-embed-video==1.1.2
 django-extensions==2.1.0
@@ -16,7 +17,7 @@ django-taggit==0.23.0
 django-treebeard==4.3
 django-widget-tweaks==1.4.2
 djangorestframework==3.8.2
-draftjs-exporter==2.1.2
+draftjs-exporter==2.1.5
 Fabric3==1.14.post1
 gunicorn==19.9.0
 html5lib==1.0.1
@@ -43,7 +44,7 @@ six==1.11.0
 traitlets==4.3.2
 Unidecode==1.0.22
 urllib3==1.23
-wagtail==2.2.2
+wagtail==2.4
 wagtail-embed-videos==0.4.2
 wcwidth==0.1.7
 webencodings==0.5.1
