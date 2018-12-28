@@ -11,21 +11,116 @@
 }
 
 //
+// NAV //
+//
+
+.navbar {
+  padding: 0rem 1rem;
+}
+
+.nav-logo {
+  width: auto;
+  height: 50px;
+  //margin-bottom: 10px;
+  //margin-top: 10px;
+}
+
+
+.bg-light {
+  background-color: rgb(35,35,35) !important;
+}
+
+//
 // HOME PAGE //
 //
 
-.home-hero {
-  //background-image:url("img/home-hero.png");
-  background-image:url("img/home-hero.jpg");
-  background-repeat:no-repeat;
-  //background-size:55%;
-  background-size:cover;
-  height: 751px;
+// with older 1 image
+//.home-hero {
+//  //background-image:url("img/home-hero.png");
+//  background-image:url("img/home-hero.jpg");
+//  background-repeat:no-repeat;
+//  //background-size:55%;
+//  background-size:cover;
+//  height: 751px;
+//
+//  display: flex;
+//  justify-content: center;
+//  align-items: center;
+//}
 
+.home-hero {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 80vh;
 }
+
+.home-hero-dances {
+  display: flex;
+  //justify-content: center;
+  flex: 1;
+  width: 100vh;
+  flex-direction: column-reverse;
+}
+
+.home-hero-dances-item {
+  //align-self: flex-end;
+  font-size: 50px;
+  color: wheat;
+  margin-bottom: 50px;
+  margin-left: 20px;
+}
+
+.line {
+  //align-self: flex-end;
+  width: 100px;
+  height: 1px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.home-hero--salsa {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/home-hero-dances-salsa.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.home-hero--bachata {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/home-hero-dances-bachata.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+.home-hero--zouk {
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/home-hero-dances-zouk.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
+.home-hero--salsa:hover {
+  background-image:linear-gradient(rgba(178, 29, 40, 0.1), rgba(178, 29, 40, 0.1)), url("img/home-hero-dances-salsa.jpg");
+}
+
+.home-hero--bachata:hover {
+  background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("img/home-hero-dances-bachata.jpg");
+}
+
+.home-hero--zouk:hover {
+  background-image:linear-gradient(rgba(178, 29, 40, 0.4), rgba(74,94,197, 0.7)), url("img/home-hero-dances-zouk.jpg");
+}
+
+
+//
+//.home-hero--salsa {
+//  background: red;
+//}
+//
+//.home-hero--bachata {
+//  background: forestgreen;
+//}
+//
+//.home-hero--zouk {
+//  background: cornflowerblue;
+//}
 
 // SECTIONS
 
