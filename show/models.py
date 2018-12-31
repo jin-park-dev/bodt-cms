@@ -54,7 +54,6 @@ class ShowPage(Page):
         else:
             return None
 
-
     def get_context(self, request):
         # Update context to include only active show, ordered by newest
         context = super().get_context(request)
@@ -62,7 +61,6 @@ class ShowPage(Page):
         context['showpages'] = showpages
         context['showpage_first'] = self
         return context
-
 
 
 class ShowPageGalleryImage(Orderable):

@@ -6,10 +6,11 @@
 {% endblock %}
 
 {% block content %}
+  <div class="show-hero">
+    <h1 class="text-center">Bachata Obsesión's choreographs</h1>
+  </div>
+
   <div class="container-fluid">
-    <div class="show-hero">
-      <h1 class="text-center">Bachata Obsesión's choreographs</h1>
-    </div>
     {#  <h2 class="text-center">{{ page.title }}</h2>#}
     <div class="text-center">{{ page.intro|richtext }}</div>
 
@@ -39,15 +40,16 @@
       </div>
 
       <div class="show-main-item-main">
-        show main
-        {{ showpage_first.specific.intro }}
-        {{ showpage_first.specific.date }}
-        {% video showpage_first.specific.video as my_video %}
-        {#        {% video my_video "large" %}#}
-        {% video my_video '800x600' %}
-
-        {% endvideo %}
-
+        <h1 class="text-center">
+          {{ showpage_first.specific.title }} - {{ showpage_first.specific.date|date:"Y" }}
+        </h1>
+        {#        {{ showpage_first.specific.intro }}#}
+        <div class="text-center">
+          {% video showpage_first.specific.video as my_video %}
+          {#        {% video my_video "large" %}#}
+          {% video my_video '800x600' %}
+            </div>
+          {% endvideo %}
       </div>
 
       <div class="show-main-item-info">

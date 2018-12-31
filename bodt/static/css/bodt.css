@@ -188,17 +188,15 @@ body {
 
 .show-main-item-menu {
   grid-area: menu;
-  background-color: #9fcdff;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .show-main-item-main {
   grid-area: main;
-  background-color: #e9ffc5;
 }
 
 .show-main-item-info {
   grid-area: info;
-  background-color: #ffd2ef;
 }
 
 .show-main-item-info-container {
@@ -228,6 +226,7 @@ body {
 .show-main-container {
   display: grid;
   grid-template-areas: "menu main main main main" "menu main main main main" "menu main main main main" "menu main main main main" "menu main main main main" "menu info info info info";
+  margin-bottom: 15px;
 }
 
 .contact-hero {
@@ -253,7 +252,7 @@ body {
 }
 
 .news-title-link {
-  color: #1f2429 !important;
+  color: #8fa0b0 !important;
 }
 
 .members-hero {
