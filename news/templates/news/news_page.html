@@ -6,16 +6,22 @@
 {% endblock %}
 
 {% block content %}
-  <h1>News Page</h1>
+  <div class="container">
+    <h1>News Page</h1>
 
-  <p>Post date: {{ page.date }}</p>
-  <p>Created date: {{ page.timestamp }}</p>
+    <h1 class="text-center mb-2">{{ page.title }}</h1>
+    <div class="text-center">{% if page.main_image %}{% image page.main_image width-1000 %}{% endif %}</div>
+{#    <div class="mt-1">Post date: {{ page.date }}</div>#}
+{#    <div class="mb-2">Created date: {{ page.timestamp }}</div>#}
+    <div class="my-3">{{ page.date }}</div>
 
-  <h2>Intro</h2>
-  {{ page.intro|richtext }}
-  <h2>Body</h2>
-  {{ page.body|richtext }}
+{#    <h2>{{ page.intro|richtext }}</h2>#}
 
-  <a href="{{ page.get_parent.url }}">Return to News Page</a>
+{#    <h2>Body</h2>#}
+    {{ page.body|richtext }}
 
+    <div class="text-center mb-4">
+      <a class="btn btn-dark" href="{{ page.get_parent.url }}">Return to News Page</a>
+    </div>
+  </div>
 {% endblock %}

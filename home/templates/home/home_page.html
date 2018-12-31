@@ -26,36 +26,78 @@
   </div>
 
   <div class="container-fluid">
+
+    <div class="home-section-body">
+      {{ page.body|richtext }}
+    </div>
+
     <div class="home-section-news">
-      <h1>News</h1>
+      <div class="h1-animation-wrapper">
+        <div class="h1-animation">
+          <a href="/news">
+            Our latest updates
+            <span class="link__arrow"></span>
+          </a>
+        </div>
+      </div>
       <div class="home-news-container">
         {% for news in newspages %}
           <div class="home-news-container-item">
             {% with news=news.specific %}
               <div class="card-deck">
-                <div class="card">
+                <a href="{% pageurl news %}">
                   {% with news.news_images.first as news_image %}
-                    {% if news_image %}
-                      <a href="{% pageurl news %}">
-{#                      {% image news_image.image min-1000x1000 class="card-img-top" %}#}
+                    <div class="card">
+                      {#                  <div>{{ news.date }}</div>#}
+
+                      {% if news_image %}
+                        {#                      {% image news_image.image min-1000x1000 class="card-img-top" %}#}
                         {% image news_image.image original as tmp_image %}
-                        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
-                      </a>
-                    {% endif %}
+                        <div class="img-center-cropped d-flex flex-column-reverse"
+                             style="background-image: url('{{ tmp_image.url }}');">
+                          <div class="card-footer">
+                            {#                        <a href="{% pageurl news %}">{{ news.title }}</a>#}
+                            <div>{{ news.title }}</div>
+                            <div>{{ news.intro }}</div>
+                          </div>
+                        </div>
+                      {% else %}
+                        <div class="img-center-cropped d-flex flex-column-reverse"
+                             style="background-image: url('{% static 'css/img/common/image-placeholder-500x500.jpg' %}');">
+                          <div class="card-footer">
+                            {#                        <a href="{% pageurl news %}">{{ news.title }}</a>#}
+                            <div>{{ news.title }}</div>
+                            <div>{{ news.intro }}</div>
+                          </div>
+                        </div>
+                      {% endif %}
+
+{#                    TODO: Weird hacky way, a href somehow allows box to take full space. Better do it in CSSqq #}
+                      <a href=""></a>
+
+                    </div>
                   {% endwith %}
-                  <div class="card-body">{{ news.body|richtext|truncatewords_html:40 }}</div>
-                  <div class="card-header"><a href="{% pageurl news %}">{{ news.title }}</a></div>
-                </div>
+                  {#                <div class="card-body">{{ news.body|richtext|truncatewords_html:40 }}</div>#}
+                </a>
+
               </div>
+
             {% endwith %}
           </div>
         {% endfor %}
       </div>
-      <div><a class="" href="/news">See More</a></div>
+    <div class="section-line"></div>
     </div>
 
     <div class="home-section-events">
-      <h1>Events, Lesson, Social</h1>
+      <div class="h1-animation-wrapper">
+        <div class="h1-animation">
+          <a href="/events">
+            Events, Lessons and Social
+            <span class="link__arrow"></span>
+          </a>
+        </div>
+      </div>
       <div class="home-news-container">
         {% for event in eventpages %}
           <div class="home-news-container-item">
@@ -78,11 +120,18 @@
           </div>
         {% endfor %}
       </div>
-      <div><a class="" href="/events">See More</a></div>
+      <div class="section-line"></div>
     </div>
 
     <div class="home-section-shows">
-      <h1>Our Shows</h1>
+      <div class="h1-animation-wrapper">
+        <div class="h1-animation">
+          <a href="/shows">
+            Bachata Obsesion Performances
+            <span class="link__arrow"></span>
+          </a>
+        </div>
+      </div>
       <div class="home-news-container">
         {% for show in showpages %}
           <div class="home-news-container-item">
@@ -105,8 +154,9 @@
           </div>
         {% endfor %}
       </div>
-      <div><a class="" href="/shows">See More</a></div>
+      <div class="section-line"></div>
     </div>
+    <div class="section-line"></div>
 
     <div class="home-section-members">
       <h1>Our team</h1>
@@ -135,9 +185,5 @@
       <div><a class="" href="/member">See More</a></div>
     </div>
 
-
-
-    {{ page.body|richtext }}
-    <p>Check out</p>
   </div>
 {% endblock %}

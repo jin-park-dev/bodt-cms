@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'crispy_forms',
     'embed_video',
+
+    'livereload',
 ]
 
 MIDDLEWARE = [
@@ -68,6 +70,8 @@ MIDDLEWARE = [
 
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+
+    'livereload.middleware.LiveReloadScript',
 ]
 
 ROOT_URLCONF = 'bodt.urls'
