@@ -46,7 +46,10 @@
           {% video showpage_first.specific.video as my_video %}
           {#        {% video my_video "large" %}#}
           {% video my_video '800x600' %}
-        </div>
+          {{ my_video.url }}
+          <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="{{ my_video.url }}" width="560" height="315" frameborder="0"></iframe>
+
+            </div>
         {% endvideo %}
       </div>
 
@@ -56,14 +59,20 @@
         </div>
       </div>
 
-{#    <p>testing to see if way embedded works below</p>#}
+    <p>testing to see if way embedded works below</p>
 {#      <iframe width="560" height="315" src="https://www.youtube.com/embed/AR8D2yqgQ1U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>#}
 {##}
 {#      <iframe allow="autoplay; encrypted-media" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/AR8D2yqgQ1U" width="560"></iframe>#}
 {##}
 {#      <iframe width="420" height="315" src="https://www.youtube.com/embed/A6XUVjK9W4o" frameborder="0" allowfullscreen></iframe>#}
 
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/CDtO1q3wRjQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
     </div>
 
   </div>
 {% endblock %}
+
+
+{#<iframe allowfullscreen="" src="http://www.youtube.com/embed/CDtO1q3wRjQ?wmode=opaque" width="800" height="600" frameborder="0"></iframe>#}
+{#<iframe allowfullscreen="" src="http://www.youtube.com/embed/CDtO1q3wRjQ?wmode=opaque" width="800" height="600" frameborder="0"></iframe>#}
