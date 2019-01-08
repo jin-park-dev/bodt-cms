@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags wagtailimages_tags embed_video_tags %}
+{% load embed_video_tags %}
 
 {% block body_class %}
 {% endblock %}
@@ -47,6 +48,7 @@
           {#        {% video my_video "large" %}#}
           {% video my_video '800x600' %}
             secure=>{{ my_video.url }}
+
           {% endvideo %}
         </div>
       </div>

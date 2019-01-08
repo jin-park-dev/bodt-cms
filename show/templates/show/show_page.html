@@ -45,11 +45,10 @@
         </h1>
         {#        {{ showpage_first.specific.intro }}#}
         <div class="text-center">
-          {% video showpage_first.specific.video as my_video %}
-          {#        {% video my_video "large" %}#}
+          {% video showpage_first.specific.video is_secure=True as my_video %}
           {% video my_video '800x600' %}
-            </div>
           {% endvideo %}
+        </div>
       </div>
 
       <div class="show-main-item-info">
