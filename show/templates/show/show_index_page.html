@@ -41,17 +41,19 @@
         <h1 class="text-center">
           {{ showpage_first.specific.title }} - {{ showpage_first.specific.date|date:"Y" }}
         </h1>
-{#        {{ showpage_first.specific.intro }}#}
+        {#        {{ showpage_first.specific.intro }}#}
         <div class="text-center">
           {% video showpage_first.specific.video as my_video %}
           {#        {% video my_video "large" %}#}
           {% video my_video '800x600' %}
-          {{ my_video.url }}
-          <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="{{ my_video.url }}" width="560" height="315" frameborder="0"></iframe>
-
-            </div>
-        {% endvideo %}
+            {{ my_video.url }}
+          {% endvideo %}
+        </div>
       </div>
+
+    <div>
+      <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="{{ showpage_first.specific.video.url }}" width="560" height="315" frameborder="0"></iframe>
+    </div>
 
       <div class="show-main-item-info">
         <div class="show-main-item-info-container">
