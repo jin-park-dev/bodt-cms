@@ -46,7 +46,9 @@
         {#        {{ showpage_first.specific.intro }}#}
         <div class="text-center">
           {% video showpage_first.specific.video is_secure=True as my_video %}
-          {% video my_video '800x600' %}
+{#          {% video my_video '800x600' %}#}
+          <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="{{ my_video.url }}" width="560" height="315" framebordqer="0"></iframe>
+
           {% endvideo %}
         </div>
       </div>
