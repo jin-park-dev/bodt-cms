@@ -43,7 +43,7 @@
         </h1>
         {#        {{ showpage_first.specific.intro }}#}
         <div class="text-center">
-          {% video showpage_first.specific.video as my_video %}
+          {% video showpage_first.specific.video  query="rel=0&wmode=transparent" is_secure=True as my_video %}
           {#        {% video my_video "large" %}#}
           {% video my_video '800x600' %}
             {{ my_video.url }}
