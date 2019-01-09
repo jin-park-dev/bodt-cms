@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
   background: whitesmoke;
+  font-family: "Cabin", sans-serif;
 }
 
 .img-center-cropped {
@@ -120,14 +121,17 @@ body {
 
 .home-hero--salsa:hover {
   background-image: linear-gradient(rgba(178, 29, 40, 0.1), rgba(178, 29, 40, 0.1)), url("img/home-hero-dances-salsa.jpg");
+  transform: scale(1.05);
 }
 
 .home-hero--bachata:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("img/home-hero-dances-bachata.jpg");
+  transform: scale(1.05);
 }
 
 .home-hero--zouk:hover {
   background-image: linear-gradient(rgba(178, 29, 40, 0.4), rgba(74, 94, 197, 0.7)), url("img/home-hero-dances-zouk.jpg");
+  transform: scale(1.05);
 }
 
 .section-line {

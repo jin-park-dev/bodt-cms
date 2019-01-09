@@ -4,6 +4,17 @@
 
 body {
   background: rgb(245,245,245);
+  //font-family: Thasadith; //Too light, thin inpersonal. 1/5
+
+  //font-family: 'Open Sans', sans-serif; //average looking. looking very standard
+  //font-family: 'Lato', sans-serif; //Standard looking again.
+
+  //font-family: 'Mukta', sans-serif; // looks standard again.
+  font-family: 'Cabin', sans-serif;
+
+  //font-family: 'Nunito Sans', sans-serif; //too spaced. looks bit inpersonal. ok for standard font
+  //font-family: 'Acme', sans-serif; //very chinese advert looking. too strong in a sterotyped style. 1/5
+  //font-family: 'Signika', sans-serif; // quite strong looking font
 }
 
 //
@@ -174,16 +185,18 @@ body {
 
 .home-hero--salsa:hover {
   background-image: linear-gradient(rgba(178, 29, 40, 0.1), rgba(178, 29, 40, 0.1)), url("img/home-hero-dances-salsa.jpg");
-
+  transform: scale(1.05);
   //opacity: 1.0;
 }
 
 .home-hero--bachata:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("img/home-hero-dances-bachata.jpg");
+  transform: scale(1.05);
 }
 
 .home-hero--zouk:hover {
   background-image: linear-gradient(rgba(178, 29, 40, 0.4), rgba(74, 94, 197, 0.7)), url("img/home-hero-dances-zouk.jpg");
+  transform: scale(1.05);
 }
 
 

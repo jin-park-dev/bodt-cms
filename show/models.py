@@ -60,6 +60,15 @@ class ShowPage(Page):
         showpages = Page.objects.get(slug='shows').get_children().live().order_by('-first_published_at')
         context['showpages'] = showpages
         context['showpage_first'] = self
+
+        # print(self.__dict__)
+        # showindex = self.get_parent()
+        # print(showindex.__dict__)
+
+        context['showindexpage'] = ShowIndexPage.objects.first()
+        # print(showindexpage.__dict__)
+        # print(showindexpage.intro)
+
         return context
 
 
