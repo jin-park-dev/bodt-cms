@@ -175,28 +175,32 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/home-hero-dances-bachata.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  transition: all 0.3s;
 }
 
 .home-hero--zouk {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("img/home-hero-dances-zouk.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  transition: all 0.3s;
 }
+
+$zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 
 .home-hero--salsa:hover {
   background-image: linear-gradient(rgba(178, 29, 40, 0.1), rgba(178, 29, 40, 0.1)), url("img/home-hero-dances-salsa.jpg");
-  transform: scale(1.05);
+  transform: scale($zoomscale);
   //opacity: 1.0;
 }
 
 .home-hero--bachata:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("img/home-hero-dances-bachata.jpg");
-  transform: scale(1.05);
+  transform: scale($zoomscale);
 }
 
 .home-hero--zouk:hover {
   background-image: linear-gradient(rgba(178, 29, 40, 0.4), rgba(74, 94, 197, 0.7)), url("img/home-hero-dances-zouk.jpg");
-  transform: scale(1.05);
+  transform: scale($zoomscale);
 }
 
 

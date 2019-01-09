@@ -9,9 +9,28 @@
   <div class="aboutus-hero">
     <h1>About Us</h1>
   </div>
-  <div class="">
-    {{ page.body|richtext }}
+
+  <div class="container mt-4">
+    <div class="">
+      {{ page.body|richtext }}
+    </div>
+    <div class="text-center m-3">
+      Notable Performances: <br/>
+      Sexy and Senual Latin Dance Festival - London <br/>
+      Bachata on Saturday (BOS) - London <br/>
+      Bachata Spice - London <br/>
+      SCFWA Chinese New Year Concert - Ipswich <br/>
+      All Stars Festival - Hungary <br/>
+      AfroSalsa Dance Festival - Cambridge <br/>
+      FLAC - Festival Live Music Angolan/Cuban - Bristol <br/>
+      Malta Salsa Congress - Malta <br/>
+      The Bury Salsa & Bachata Extravaganza - Bury St. Edmunds <br/>
+      Ritmo Latino's Ataca & La Alemana Bootcamp - London <br/>
+      London Goes Latin @ The O2 Arena - London <br/>
+    </div>
+
+    <div class="text-center my-4">
+      <a class="btn btn-dark text-center" href="{{ page.get_parent.url }}">Return to Home Page</a>
+    </div>
   </div>
-  <p>Check out</p>
-  <a href="{{ page.get_parent.url }}">Return to Home Page</a>
 {% endblock %}
