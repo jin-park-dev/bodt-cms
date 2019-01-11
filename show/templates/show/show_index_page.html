@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% load wagtailcore_tags wagtailimages_tags embed_video_tags %}
-{% load embed_video_tags %}
 
 {% block body_class %}
 {% endblock %}
@@ -13,16 +12,18 @@
 
   <div class="container-fluid">
     {#  <h2 class="text-center">{{ page.title }}</h2>#}
-    <div class="home-section-body">{{ page.intro|richtext }}</div>
-  <hr>
+    <div class="show-section-body">{{ page.intro|richtext }}</div>
+    <hr>
     <div class="show-main-container">
 
       <div class="show-main-item-menu">
         <div class="showspages-container-wrapper">
           <div class="showspages-container">
             {% for show in showpages %}
+              <div class="showspages-container-item">
+
               {% with show=show.specific %}
-                <h2><a href="{% pageurl show %}">{{ show.title }}</a></h2>
+                <h2 class="h1-animation"><a href="{% pageurl show %}">{{ show.title }}</a></h2>
 
                 {% with show.main_image as main_image %}
                   {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
@@ -30,15 +31,16 @@
 
                 <p>{{ show.intro }}</p>
 {#                {{ show.body|richtext }}#}
-
               {% endwith %}
+              </div>
+              <hr>
             {% endfor %}
           </div>
         </div>
       </div>
 
       <div class="show-main-item-main">
-        <h1 class="text-center">
+        <h1 class="text-center mt-2">
           {{ showpage_first.specific.title }} - {{ showpage_first.specific.date|date:"Y" }}
         </h1>
         {#        {{ showpage_first.specific.intro }}#}

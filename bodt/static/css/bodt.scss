@@ -17,6 +17,11 @@ body {
   //font-family: 'Signika', sans-serif; // quite strong looking font
 }
 
+hr {
+  margin: 0;
+  align-self: stretch;
+}
+
 //
 // UTILS
 //
@@ -47,19 +52,23 @@ body {
 
 .h1-animation a {
   color: black;
+  text-decoration: none;
 }
 
 .h1-animation::after {
   color: rgba(111,111,111,0.8);
   //content: '>';
-  content: '\25B7';
+  //content: '\25B7'; //too odd
+  content: '\25B9'; //too odd
+  //content: '\27A9'; //too small
+  //content: '\27A7'; //filled. no outline
+  //content: '\21E8';
   transition: all 0.8s;
 }
 
 .h1-animation:hover {
   transform: translateX(5px);
-  color:green;
-
+  //color:green;
 }
 
 .h1-animation:hover::after {
@@ -303,6 +312,15 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   color: whitesmoke;
 }
 
+.show-section-body {
+  padding-bottom: 30px;
+  text-align: center;
+  max-width: 700px;
+  margin: 30px auto 15px auto;
+
+  font-size: 30px;
+}
+
 .show-main-item-menu {
   grid-area: menu;
   //background-color: #9fcdff;
@@ -340,12 +358,18 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   //align-content: center;
 
   //width: 80%;
+
 }
 
 .showspages-container-item {
   //flex: 0 1 auto;
   //border-style: solid;
   //border-width: 1px;
+}
+
+.showspages-container-item a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .show-main-item-info-container-item {
