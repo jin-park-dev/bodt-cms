@@ -27,7 +27,9 @@ class HomePage(Page):
     ]
 
     # Event, Other pages to create on Homepage
-    subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage', 'show.ShowIndexPage', 'event.EventIndexPage', 'ContactUsPage']
+    subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage',
+                     'show.ShowIndexPage', 'event.EventIndexPage', 'ContactUsPage',
+                     'puput.BlogPage']
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)

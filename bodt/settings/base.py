@@ -56,6 +56,12 @@ INSTALLED_APPS = [
     'crispy_forms',
     'embed_video',
 
+    'wagtail.contrib.sitemaps',
+    'wagtail.contrib.routable_page',
+    'django_social_share',
+    'puput',
+    'colorful',
+
     'livereload',
 ]
 
@@ -171,3 +177,6 @@ BASE_URL = 'https://bodt.jinis.online'
 
 # Crispy form
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+PUPUT_AS_PLUGIN = True
+# WAGTAIL_SITE_NAME = 'Puput blog'
