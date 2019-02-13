@@ -17,6 +17,8 @@ from news.models import NewsPage
 from event.models import EventPage
 from show.models import ShowPage
 
+from puput.models import BlogPage, EntryPage
+
 
 class HomePage(Page):
 
@@ -34,7 +36,15 @@ class HomePage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request)
 
-        newspages = NewsPage.objects.live().order_by('-first_published_at')[0:3]
+        # print('BlogPage')
+        # print(BlogPage)
+        # newspages = BlogPage.objects.live().order_by('-first_published_at')[0:3]
+        newspages = EntryPage.objects.live().order_by('-first_published_at')[0:3]
+        # print('blogpage')
+        # print(blogpage)
+
+        # newspages = NewsPage.objects.live().order_by('-first_published_at')[0:3]
+        # print(newspages.first().__dict__)
         context['newspages'] = newspages
 
         eventpages = EventPage.objects.live().order_by('-first_published_at')[0:3]

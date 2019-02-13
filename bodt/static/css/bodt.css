@@ -60,6 +60,14 @@ hr {
   background: #d3d9df;
 }
 
+.page-title {
+  background-color: rgba(193, 193, 193, 0.47);
+  border-radius: 10px;
+  color: whitesmoke;
+  padding: 1rem;
+  font-size: 70px;
+}
+
 .navbar {
   padding: 0rem 1rem;
 }
@@ -186,6 +194,10 @@ hr {
   grid-column-gap: 10px;
 }
 
+.home-news-card-footer {
+  background-color: #eaeaea;
+}
+
 .show-hero {
   background-image: url("img/show-hero.png");
   background-repeat: no-repeat;
@@ -272,11 +284,47 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #eaeaea;
 }
 
 .news-title-link {
   color: #8fa0b0 !important;
+}
+
+.about {
+  background: var(--main-color) none repeat scroll 0 0;
+  margin-bottom: 4em;
+}
+
+.about .title-section {
+  padding: 30px 0 20px;
+}
+
+.about .title-section-image {
+  padding: 0;
+}
+
+.about .title-section h1 {
+  font-weight: 400;
+}
+
+.about .title-section-image h1 {
+  margin-top: 0;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.about .title-section h2 {
+  color: #ededed;
+}
+
+.about .title-header a {
+  color: #FFF;
+}
+
+.about .title-header a:hover,
+.about .title-header a:focus {
+  color: #FFF;
+  text-decoration: none;
 }
 
 .members-hero {
