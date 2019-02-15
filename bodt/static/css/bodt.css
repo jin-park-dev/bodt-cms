@@ -60,6 +60,13 @@ hr {
   background: #d3d9df;
 }
 
+.no-wrap {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  min-width: 0;
+}
+
 .page-title {
   background-color: rgba(193, 193, 193, 0.47);
   border-radius: 10px;
@@ -196,6 +203,11 @@ hr {
 
 .home-news-card-footer {
   background-color: #eaeaea;
+  border-radius: 0px !important;
+}
+
+.home-news-event-card-header {
+  height: 65px;
 }
 
 .show-hero {
@@ -266,7 +278,7 @@ hr {
 }
 
 .contact-hero {
-  background-image: url("img/contact us-home.jpg");
+  background-image: url("img/performance-2019-after-norwich-madlove.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 751px;
@@ -277,7 +289,7 @@ hr {
 }
 
 .news-hero {
-  background-image: url("img/news-hero.jpg");
+  background-image: url("img/egla.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 751px;
@@ -329,6 +341,7 @@ hr {
 
 .members-hero {
   background-image: url("img/members-hero.jpg");
+  background-image: url("img/our-team.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 751px;
@@ -354,7 +367,7 @@ hr {
 }
 
 .aboutus-hero {
-  background-image: url("img/events-hero.jpg");
+  background-image: url("img/about us 2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 751px;

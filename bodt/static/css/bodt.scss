@@ -98,6 +98,14 @@ hr {
   background: #d3d9df;
 }
 
+.no-wrap {
+  //max-height: 50px;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  min-width: 0
+}
+
 // For page title
 .page-title {
   background-color: rgba(193, 193, 193, 0.47);
@@ -299,6 +307,13 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 
 .home-news-card-footer {
   background-color: #eaeaea;
+  border-radius: 0px !important;
+}
+
+.home-news-event-card-header {
+  //background-color: #eaeaea;
+  //border-radius: 0px !important;
+  height: 65px;
 }
 
 //.home-news-container {
@@ -411,7 +426,8 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 //
 
 .contact-hero {
-  background-image:url("img/contact us-home.jpg");
+  //background-image:url("img/contact us-home.jpg");
+  background-image:url("img/performance-2019-after-norwich-madlove.jpg");
   background-repeat:no-repeat;
   background-size:cover;
   height: 751px;
@@ -429,7 +445,8 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 //
 
 .news-hero {
-  background-image:url("img/news-hero.jpg");
+  //background-image:url("img/news-hero.jpg");
+  background-image:url("img/egla.jpg");
   background-repeat:no-repeat;
   background-size:cover;
   height: 751px;
@@ -492,6 +509,7 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 
 .members-hero {
   background-image:url("img/members-hero.jpg");
+  background-image:url("img/our-team.jpg");
   background-repeat:no-repeat;
   background-size:cover;
   height: 751px;
@@ -539,7 +557,8 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 //
 
 .aboutus-hero {
-  background-image:url("img/events-hero.jpg");
+  //background-image:url("img/events-hero.jpg");
+  background-image:url("img/about us 2.jpg");
   background-repeat:no-repeat;
   background-size:cover;
   height: 751px;

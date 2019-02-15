@@ -31,15 +31,11 @@
       {{ page.body|richtext }}
     </div>
 
-    <div>
-      friendly, warm, something ?
-    </div>
-
-    <div class="home-section-news">
+    <div class="home-section-news container">
       <div class="h1-animation-wrapper">
         <div class="h1-animation">
           <a href="/news">
-            Our latest updates
+            News
             <span class="link__arrow"></span>
           </a>
         </div>
@@ -92,7 +88,7 @@
     <div class="section-line"></div>
     </div>
 
-    <div class="home-section-events">
+    <div class="home-section-events container">
       <div class="h1-animation-wrapper">
         <div class="h1-animation">
           <a href="/events">
@@ -116,7 +112,14 @@
                     {% endif %}
                   {% endwith %}
                   <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>
-                  <div class="card-header"><a href="{% pageurl event %}">{{ event.title }}</a></div>
+{#                  <div class="text-truncate">{{ event.title }}</div>#}
+                  <div class="card-header home-news-event-card-header d-flex flex-column justify-content-center">
+                    <div class="align-middle">
+                      <a class="" href="{% pageurl event %}">
+                          {{ event.title }}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             {% endwith %}
@@ -126,11 +129,11 @@
       <div class="section-line"></div>
     </div>
 
-    <div class="home-section-shows">
+    <div class="home-section-shows container">
       <div class="h1-animation-wrapper">
         <div class="h1-animation">
           <a href="/shows">
-            Bachata Obsesion Performances
+            Shows
             <span class="link__arrow"></span>
           </a>
         </div>
@@ -161,8 +164,15 @@
     </div>
     <div class="section-line"></div>
 
-    <div class="home-section-members">
-      <h1>Our team</h1>
+    <div class="home-section-members container">
+      <div class="h1-animation-wrapper">
+        <div class="h1-animation">
+          <a href="/member">
+            Our team
+            <span class="link__arrow"></span>
+          </a>
+        </div>
+      </div>
       <div class="home-members-container">
         {% for people in peoplepages %}
           <div class="home-news-container-item">
