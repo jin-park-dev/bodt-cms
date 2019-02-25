@@ -175,12 +175,25 @@ hr {
 }
 
 .home-section-news {
+  background-color: #434343;
   margin-bottom: 15px;
   padding: 0 0 15px 0;
 }
 
 .home-section-events {
+  background-color: #ffdfe5;
   margin-bottom: 15px;
+}
+
+.home-news-container-new {
+  display: flex;
+  margin-left: 5px;
+}
+
+.home-news-container-new-reversed {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
 }
 
 .home-news-container {
@@ -188,6 +201,10 @@ hr {
   grid-template-columns: 1fr 1fr 1fr;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
+}
+
+.home-news-container-item {
+  width: 350px;
 }
 
 .home-news-container-item a {

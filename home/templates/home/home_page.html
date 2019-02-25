@@ -25,13 +25,13 @@
     </div>
   </div>
 
-  <div class="container-fluid">
+  <div class="">
 
     <div class="home-section-body">
       {{ page.body|richtext }}
     </div>
 
-    <div class="home-section-news container">
+    <div class="home-section-news">
       <div class="h1-animation-wrapper">
         <div class="h1-animation">
           <a href="/news">
@@ -40,9 +40,9 @@
           </a>
         </div>
       </div>
-      <div class="home-news-container">
+      <div class="home-news-container-new">
         {% for news in newspages %}
-          <div class="home-news-container-item">
+          <div class="home-news-container-item ml-5">
             {% with news=news.specific %}
               <div class="card-deck">
                 <a href="{% pageurl news %}">
@@ -88,7 +88,7 @@
     <div class="section-line"></div>
     </div>
 
-    <div class="home-section-events container">
+    <div class="home-section-events">
       <div class="h1-animation-wrapper">
         <div class="h1-animation">
           <a href="/events">
@@ -97,9 +97,9 @@
           </a>
         </div>
       </div>
-      <div class="home-news-container">
+      <div class="home-news-container-new-reversed">
         {% for event in eventpages %}
-          <div class="home-news-container-item">
+          <div class="home-news-container-item mr-5">
             {% with event=event.specific %}
               <div class="card-deck">
                 <div class="card">
@@ -111,7 +111,7 @@
                       </a>
                     {% endif %}
                   {% endwith %}
-                  <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>
+{#                  <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>#}
 {#                  <div class="text-truncate">{{ event.title }}</div>#}
                   <div class="card-header home-news-event-card-header d-flex flex-column justify-content-center">
                     <div class="align-middle">
@@ -129,7 +129,7 @@
       <div class="section-line"></div>
     </div>
 
-    <div class="home-section-shows container">
+    <div class="">
       <div class="h1-animation-wrapper">
         <div class="h1-animation">
           <a href="/shows">
@@ -138,9 +138,9 @@
           </a>
         </div>
       </div>
-      <div class="home-news-container">
+      <div class="home-news-container-new">
         {% for show in showpages %}
-          <div class="home-news-container-item">
+          <div class="home-news-container-item ml-5">
             {% with show=show.specific %}
               <div class="card-deck">
                 <div class="card">
@@ -152,7 +152,7 @@
                       </a>
                     {% endif %}
                   {% endwith %}
-                  <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>
+{#                  <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>#}
                   <div class="card-header"><a href="{% pageurl show %}">{{ show.title }}</a></div>
                 </div>
               </div>
@@ -187,7 +187,7 @@
                       </a>
                     {% endif %}
                   {% endwith %}
-                  <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>
+{#                  <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>#}
                   <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
                 </div>
               </div>
