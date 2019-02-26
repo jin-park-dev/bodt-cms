@@ -46,46 +46,46 @@
 
   <section class="gallery-block compact-gallery">
     <div class="">
-      <div class="heading">
-        <h2>Compact Gallery</h2>
-      </div>
+{#      <div class="heading">#}
+{#        <h2></h2>#}
+{#      </div>#}
       <div class="row no-gutters">
-        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+        <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-1.jpg" %}">
             <img class="img-fluid image" src="{% static "img/home/home-g-1.jpg" %}">
           </a>
         </div>
-        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+        <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-2.jpg" %}">
             <img class="img-fluid image center-cropped" src="{% static "img/home/home-g-2.jpg" %}">
           </a>
         </div>
-        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+        <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-3.jpg" %}">
             <img class="img-fluid image" src="{% static "img/home/home-g-3.jpg" %}">
           </a>
         </div>
-        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+        <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-4.jpg" %}">
             <img class="img-fluid image" src="{% static "img/home/home-g-4.jpg" %}">
           </a>
         </div>
-        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+        <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-5.jpg" %}">
             <img class="img-fluid image" src="{% static "img/home/home-g-5.jpg" %}">
           </a>
         </div>
-        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+        <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-6.jpg" %}">
             <img class="img-fluid image" src="{% static "img/home/home-g-6.jpg" %}">
           </a>
         </div>
-        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+        <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-7.jpg" %}">
             <img class="img-fluid image" src="{% static "img/home/home-g-7.jpg" %}">
           </a>
         </div>
-        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+        <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-8.jpg" %}">
             <img class="img-fluid image" src="{% static "img/home/home-g-8.jpg" %}">
           </a>
@@ -101,15 +101,16 @@
   <div class="home-section-news">
     <div class="h1-animation-wrapper">
       <div class="h1-animation">
-        <a href="/news">
+        <a href="/news" style="color: #d8d8d8;">
           News
           <span class="link__arrow"></span>
         </a>
       </div>
     </div>
-    <div class="home-news-container-new">
+{#    <div class="home-news-container-new">#}
+    <div class="row ml-1">
       {% for news in newspages %}
-        <div class="home-news-container-item ml-5">
+        <div class="col-sm-12 col-md-3 home-news-container-item">
           {% with news=news.specific %}
             <div class="card-deck">
               <a href="{% pageurl news %}">
@@ -151,8 +152,9 @@
           {% endwith %}
         </div>
       {% endfor %}
+      <div class="offset-md-3"></div>
     </div>
-    <div class="section-line"></div>
+{#    <div class="section-line"></div>#}
   </div>
 
   <div class="home-section-events">
@@ -164,9 +166,12 @@
         </a>
       </div>
     </div>
-    <div class="home-news-container-new-reversed">
+{#    <div class="home-news-container-new-reversed">#}
+    <div class="row mr-1">
+      <div class="offset-md-3"></div>
       {% for event in eventpages %}
-        <div class="home-news-container-item mr-5">
+{#        <div class="home-news-container-item mr-5">#}
+        <div class="col-sm-12 col-md-3 home-news-container-item">
           {% with event=event.specific %}
             <div class="card-deck">
               <div class="card">
@@ -193,10 +198,9 @@
         </div>
       {% endfor %}
     </div>
-    <div class="section-line"></div>
   </div>
 
-  <div class="">
+  <div class="home-section-shows">
     <div class="h1-animation-wrapper">
       <div class="h1-animation">
         <a href="/shows">
@@ -205,9 +209,9 @@
         </a>
       </div>
     </div>
-    <div class="home-news-container-new">
+    <div class="row ml-1">
       {% for show in showpages %}
-        <div class="home-news-container-item ml-5">
+        <div class="col-sm-12 col-md-3 home-news-container-item">
           {% with show=show.specific %}
             <div class="card-deck">
               <div class="card">
@@ -227,9 +231,8 @@
         </div>
       {% endfor %}
     </div>
-    <div class="section-line"></div>
+    <div class="offset-md-3"></div>
   </div>
-  <div class="section-line"></div>
 
   <div class="home-section-members container">
     <div class="h1-animation-wrapper">

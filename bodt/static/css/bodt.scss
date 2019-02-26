@@ -81,6 +81,11 @@ hr {
 
 // Overriding bootstrap here.
 
+.card {
+  border: 1px solid #dcf1ff;
+  border-radius: 5px;
+}
+
 .card-body {
   height: 200px;
 
@@ -277,15 +282,20 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 }
 
 .home-section-news {
-  background-color: #434343;
-  margin-bottom: 15px;
-  padding: 0 0 15px 0;
+  background-color: #232323b5;
+  //margin-bottom: 15px;
+  padding: 35px 0 35px 0;
 }
 
 .home-section-events {
-  background-color: #ffdfe5;
-  margin-bottom: 15px;
+  background-color: #a2c4c9;
+  padding: 35px 0 35px 0;
+}
 
+.home-section-shows {
+  background-color: #ffdecc;
+  //margin-bottom: 15px;
+  padding: 35px 0 35px 0;
 }
 
 .home-news-container-new {
@@ -311,7 +321,7 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 }
 
 .home-news-container-item {
-  width: 350px;
+  //width: 350px;
 }
 
 .home-news-container-item a {
