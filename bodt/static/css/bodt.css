@@ -228,6 +228,11 @@ hr {
   height: 65px;
 }
 
+.home-gallery {
+  max-width: 100%;
+  height: auto;
+}
+
 .show-hero {
   background-image: url("img/show-hero.png");
   background-repeat: no-repeat;

@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block content %}
-{#  <div class="home-hero">#}
-{#    <h1 class="">Bachata Obsesión Dance Team</h1>#}
-{#  </div>#}
+  {#  <div class="home-hero">#}
+  {#    <h1 class="">Bachata Obsesión Dance Team</h1>#}
+  {#  </div>#}
 
   <div class="home-hero">
     <div class="home-hero-dances home-hero--salsa">
@@ -25,178 +25,243 @@
     </div>
   </div>
 
-  <div class="">
+  <div class="home-section-body">
+    {{ page.body|richtext }}
+  </div>
 
-    <div class="home-section-body">
-      {{ page.body|richtext }}
-    </div>
+{#  <div class="container-fluid">#}
+{#    <div class="row">#}
+{#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-1.jpg" %}"></div>#}
+{#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-2.jpg" %}"></div>#}
+{#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-3.jpg" %}"></div>#}
+{#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-4.jpg" %}"></div>#}
+{#    </div>#}
+{#    <div class="row">#}
+{#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-5.jpg" %}"></div>#}
+{#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-6.jpg" %}"></div>#}
+{#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-7.jpg" %}"></div>#}
+{#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-8.jpg" %}"></div>#}
+{#    </div>#}
+{#  </div>#}
 
-    <div class="home-section-news">
-      <div class="h1-animation-wrapper">
-        <div class="h1-animation">
-          <a href="/news">
-            News
-            <span class="link__arrow"></span>
+  <section class="gallery-block compact-gallery">
+    <div class="">
+      <div class="heading">
+        <h2>Compact Gallery</h2>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-1.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-1.jpg" %}">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-2.jpg" %}">
+            <img class="img-fluid image center-cropped" src="{% static "img/home/home-g-2.jpg" %}">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-3.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-3.jpg" %}">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-4.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-4.jpg" %}">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-5.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-5.jpg" %}">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-6.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-6.jpg" %}">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-7.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-7.jpg" %}">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-8.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-8.jpg" %}">
           </a>
         </div>
       </div>
-      <div class="home-news-container-new">
-        {% for news in newspages %}
-          <div class="home-news-container-item ml-5">
-            {% with news=news.specific %}
-              <div class="card-deck">
-                <a href="{% pageurl news %}">
-{#                Old news code just below #}
-{#                  {% with news.news_images.first as news_image %}#}
-                      <div class="card">
-                      {#                  <div>{{ news.date }}</div>#}
-                      {% if news.header_image %}
-                        {#                      {% image news_image.image min-1000x1000 class="card-img-top" %}#}
-{#                        {% image news.header_image fill-800x240 as header_image %}#}
-                        {% image news.header_image original as header_image %}
-                        <div class="img-center-cropped d-flex flex-column-reverse"
-                             style="background-image: url('{{ header_image.url }}');">
-                          <div class="card-footer home-news-card-footer">
-                            {#                        <a href="{% pageurl news %}">{{ news.title }}</a>#}
-                            <div>{{ news.title }}</div>
-                          </div>
-                        </div>
-                      {% else %}
-                        <div class="img-center-cropped d-flex flex-column-reverse"
-                             style="background-image: url('{% static 'css/img/common/image-placeholder-500x500.jpg' %}');">
-                          <div class="card-footer home-news-card-footer">
-                            {#                        <a href="{% pageurl news %}">{{ news.title }}</a>#}
-                            <div>{{ news.title }}</div>
-{#                            <div>{{ news.intro }}</div>#}
-                          </div>
-                        </div>
-                      {% endif %}
-
-{#                    TODO: Weird hacky way, a href somehow allows box to take full space. Better do it in CSSqq #}
-                      <a href=""></a>
-
-                    </div>
-                  {#                <div class="card-body">{{ news.body|richtext|truncatewords_html:40 }}</div>#}
-                </a>
-
-              </div>
-
-            {% endwith %}
-          </div>
-        {% endfor %}
-      </div>
-    <div class="section-line"></div>
     </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+  <script>
+      baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+  </script>
 
-    <div class="home-section-events">
-      <div class="h1-animation-wrapper">
-        <div class="h1-animation">
-          <a href="/events">
-            Events, Lessons and Social
-            <span class="link__arrow"></span>
-          </a>
-        </div>
+  <div class="home-section-news">
+    <div class="h1-animation-wrapper">
+      <div class="h1-animation">
+        <a href="/news">
+          News
+          <span class="link__arrow"></span>
+        </a>
       </div>
-      <div class="home-news-container-new-reversed">
-        {% for event in eventpages %}
-          <div class="home-news-container-item mr-5">
-            {% with event=event.specific %}
-              <div class="card-deck">
+    </div>
+    <div class="home-news-container-new">
+      {% for news in newspages %}
+        <div class="home-news-container-item ml-5">
+          {% with news=news.specific %}
+            <div class="card-deck">
+              <a href="{% pageurl news %}">
+                {#                Old news code just below #}
+                {#                  {% with news.news_images.first as news_image %}#}
                 <div class="card">
-                  {% with event.event_images.first as event_image %}
-                    {% if event_image %}
-                      <a href="{% pageurl event %}">
-                        {% image event_image.image original as tmp_image %}
-                        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
-                      </a>
-                    {% endif %}
-                  {% endwith %}
-{#                  <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>#}
-{#                  <div class="text-truncate">{{ event.title }}</div>#}
-                  <div class="card-header home-news-event-card-header d-flex flex-column justify-content-center">
-                    <div class="align-middle">
-                      <a class="" href="{% pageurl event %}">
-                          {{ event.title }}
-                      </a>
+                  {#                  <div>{{ news.date }}</div>#}
+                  {% if news.header_image %}
+                    {#                      {% image news_image.image min-1000x1000 class="card-img-top" %}#}
+                    {#                        {% image news.header_image fill-800x240 as header_image %}#}
+                    {% image news.header_image original as header_image %}
+                    <div class="img-center-cropped d-flex flex-column-reverse"
+                         style="background-image: url('{{ header_image.url }}');">
+                      <div class="card-footer home-news-card-footer">
+                        {#                        <a href="{% pageurl news %}">{{ news.title }}</a>#}
+                        <div>{{ news.title }}</div>
+                      </div>
                     </div>
+                  {% else %}
+                    <div class="img-center-cropped d-flex flex-column-reverse"
+                         style="background-image: url('{% static 'css/img/common/image-placeholder-500x500.jpg' %}');">
+                      <div class="card-footer home-news-card-footer">
+                        {#                        <a href="{% pageurl news %}">{{ news.title }}</a>#}
+                        <div>{{ news.title }}</div>
+                        {#                            <div>{{ news.intro }}</div>#}
+                      </div>
+                    </div>
+                  {% endif %}
+
+                  {#                    TODO: Weird hacky way, a href somehow allows box to take full space. Better do it in CSSqq #}
+                  <a href=""></a>
+
+                </div>
+                {#                <div class="card-body">{{ news.body|richtext|truncatewords_html:40 }}</div>#}
+              </a>
+
+            </div>
+
+          {% endwith %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="home-section-events">
+    <div class="h1-animation-wrapper">
+      <div class="h1-animation">
+        <a href="/events">
+          Events, Lessons and Social
+          <span class="link__arrow"></span>
+        </a>
+      </div>
+    </div>
+    <div class="home-news-container-new-reversed">
+      {% for event in eventpages %}
+        <div class="home-news-container-item mr-5">
+          {% with event=event.specific %}
+            <div class="card-deck">
+              <div class="card">
+                {% with event.event_images.first as event_image %}
+                  {% if event_image %}
+                    <a href="{% pageurl event %}">
+                      {% image event_image.image original as tmp_image %}
+                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                    </a>
+                  {% endif %}
+                {% endwith %}
+                {#                  <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>#}
+                {#                  <div class="text-truncate">{{ event.title }}</div>#}
+                <div class="card-header home-news-event-card-header d-flex flex-column justify-content-center">
+                  <div class="align-middle">
+                    <a class="" href="{% pageurl event %}">
+                      {{ event.title }}
+                    </a>
                   </div>
                 </div>
               </div>
-            {% endwith %}
-          </div>
-        {% endfor %}
-      </div>
-      <div class="section-line"></div>
-    </div>
-
-    <div class="">
-      <div class="h1-animation-wrapper">
-        <div class="h1-animation">
-          <a href="/shows">
-            Shows
-            <span class="link__arrow"></span>
-          </a>
+            </div>
+          {% endwith %}
         </div>
-      </div>
-      <div class="home-news-container-new">
-        {% for show in showpages %}
-          <div class="home-news-container-item ml-5">
-            {% with show=show.specific %}
-              <div class="card-deck">
-                <div class="card">
-                  {% with show.show_images.first as show_image %}
-                    {% if show_image %}
-                      <a href="{% pageurl show %}">
-                        {% image show_image.image original as tmp_image %}
-                        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
-                      </a>
-                    {% endif %}
-                  {% endwith %}
-{#                  <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>#}
-                  <div class="card-header"><a href="{% pageurl show %}">{{ show.title }}</a></div>
-                </div>
-              </div>
-            {% endwith %}
-          </div>
-        {% endfor %}
-      </div>
-      <div class="section-line"></div>
+      {% endfor %}
     </div>
     <div class="section-line"></div>
+  </div>
 
-    <div class="home-section-members container">
-      <div class="h1-animation-wrapper">
-        <div class="h1-animation">
-          <a href="/member">
-            Our team
-            <span class="link__arrow"></span>
-          </a>
-        </div>
+  <div class="">
+    <div class="h1-animation-wrapper">
+      <div class="h1-animation">
+        <a href="/shows">
+          Shows
+          <span class="link__arrow"></span>
+        </a>
       </div>
-      <div class="home-members-container">
-        {% for people in peoplepages %}
-          <div class="home-news-container-item">
-            {% with people=people.specific %}
-              <div class="card-deck">
-                <div class="card">
-                  {% with people.people_images.first as people_image %}
-                    {% if people_image %}
-                      <a href="{% pageurl people %}">
-                        {% image people_image.image original as tmp_image %}
-                        <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
-                      </a>
-                    {% endif %}
-                  {% endwith %}
-{#                  <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>#}
-                  <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
-                </div>
-              </div>
-            {% endwith %}
-          </div>
-        {% endfor %}
-      </div>
-      <div><a class="" href="/member">See More</a></div>
     </div>
+    <div class="home-news-container-new">
+      {% for show in showpages %}
+        <div class="home-news-container-item ml-5">
+          {% with show=show.specific %}
+            <div class="card-deck">
+              <div class="card">
+                {% with show.show_images.first as show_image %}
+                  {% if show_image %}
+                    <a href="{% pageurl show %}">
+                      {% image show_image.image original as tmp_image %}
+                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                    </a>
+                  {% endif %}
+                {% endwith %}
+                {#                  <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>#}
+                <div class="card-header"><a href="{% pageurl show %}">{{ show.title }}</a></div>
+              </div>
+            </div>
+          {% endwith %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="section-line"></div>
+  </div>
+  <div class="section-line"></div>
 
+  <div class="home-section-members container">
+    <div class="h1-animation-wrapper">
+      <div class="h1-animation">
+        <a href="/member">
+          Our team
+          <span class="link__arrow"></span>
+        </a>
+      </div>
+    </div>
+    <div class="home-members-container">
+      {% for people in peoplepages %}
+        <div class="home-news-container-item">
+          {% with people=people.specific %}
+            <div class="card-deck">
+              <div class="card">
+                {% with people.people_images.first as people_image %}
+                  {% if people_image %}
+                    <a href="{% pageurl people %}">
+                      {% image people_image.image original as tmp_image %}
+                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                    </a>
+                  {% endif %}
+                {% endwith %}
+                {#                  <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>#}
+                <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
+              </div>
+            </div>
+          {% endwith %}
+        </div>
+      {% endfor %}
+    </div>
+    <div><a class="" href="/member">See More</a></div>
   </div>
 {% endblock %}

@@ -337,6 +337,11 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   height: 65px;
 }
 
+.home-gallery {
+  max-width: 100%;
+  height: auto;
+}
+
 //.home-news-container {
 //  display: flex;
 //}
