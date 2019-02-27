@@ -1,3 +1,5 @@
+$card-background-color: #f7f7f7;
+
 //
 // ALL SITES
 //
@@ -82,8 +84,14 @@ hr {
 // Overriding bootstrap here.
 
 .card {
-  border: 1px solid #dcf1ff;
-  border-radius: 5px;
+  //border: hidden;
+  //border: 1px solid #dcf1ff;
+  //border-radius: 25px;
+
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom: solid $card-background-color 5px;
 }
 
 .card-body {
@@ -337,12 +345,12 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 }
 
 .home-news-card-footer {
-  background-color: #eaeaea;
+  background-color: $card-background-color;
   border-radius: 0px !important;
 }
 
 .home-news-event-card-header {
-  //background-color: #eaeaea;
+  background-color: $card-background-color;
   //border-radius: 0px !important;
   height: 65px;
 }

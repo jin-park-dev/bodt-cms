@@ -50,8 +50,10 @@ hr {
 }
 
 .card {
-  border: 1px solid #dcf1ff;
-  border-radius: 5px;
+  border-top: hidden;
+  border-left: hidden;
+  border-right: hidden;
+  border-bottom: solid #f7f7f7 5px;
 }
 
 .card-body {
@@ -225,11 +227,12 @@ hr {
 }
 
 .home-news-card-footer {
-  background-color: #eaeaea;
+  background-color: #f7f7f7;
   border-radius: 0px !important;
 }
 
 .home-news-event-card-header {
+  background-color: #f7f7f7;
   height: 65px;
 }
 

@@ -108,7 +108,7 @@
       </div>
     </div>
 {#    <div class="home-news-container-new">#}
-    <div class="row ml-1">
+    <div class="row ml-1" style="margin-left: 0; margin-right: 0;">
       {% for news in newspages %}
         <div class="col-sm-12 col-md-3 home-news-container-item">
           {% with news=news.specific %}
@@ -167,7 +167,7 @@
       </div>
     </div>
 {#    <div class="home-news-container-new-reversed">#}
-    <div class="row mr-1">
+    <div class="row mr-1" style="margin-left: 0; margin-right: 0;">
       <div class="offset-md-3"></div>
       {% for event in eventpages %}
 {#        <div class="home-news-container-item mr-5">#}
@@ -185,7 +185,7 @@
                 {% endwith %}
                 {#                  <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>#}
                 {#                  <div class="text-truncate">{{ event.title }}</div>#}
-                <div class="card-header home-news-event-card-header d-flex flex-column justify-content-center">
+                <div class="card-footer home-news-event-card-header d-flex flex-column justify-content-center">
                   <div class="align-middle">
                     <a class="" href="{% pageurl event %}">
                       {{ event.title }}
@@ -209,7 +209,7 @@
         </a>
       </div>
     </div>
-    <div class="row ml-1">
+    <div class="row ml-1" style="margin-left: 0; margin-right: 0;">
       {% for show in showpages %}
         <div class="col-sm-12 col-md-3 home-news-container-item">
           {% with show=show.specific %}
@@ -224,7 +224,7 @@
                   {% endif %}
                 {% endwith %}
                 {#                  <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>#}
-                <div class="card-header"><a href="{% pageurl show %}">{{ show.title }}</a></div>
+                <div class="card-footer"><a href="{% pageurl show %}">{{ show.title }}</a></div>
               </div>
             </div>
           {% endwith %}
@@ -234,7 +234,7 @@
     <div class="offset-md-3"></div>
   </div>
 
-  <div class="home-section-members container">
+  <div class="home-section-members">
     <div class="h1-animation-wrapper">
       <div class="h1-animation">
         <a href="/member">
@@ -258,13 +258,12 @@
                   {% endif %}
                 {% endwith %}
                 {#                  <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>#}
-                <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
+                <div class="card-footer"><a href="{% pageurl people %}">{{ people.title }}</a></div>
               </div>
             </div>
           {% endwith %}
         </div>
       {% endfor %}
     </div>
-    <div><a class="" href="/member">See More</a></div>
   </div>
 {% endblock %}
