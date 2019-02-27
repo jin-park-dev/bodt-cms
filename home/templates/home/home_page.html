@@ -243,27 +243,40 @@
         </a>
       </div>
     </div>
-    <div class="home-members-container">
-      {% for people in peoplepages %}
-        <div class="home-news-container-item">
+    <section class="gallery-block compact-gallery">
+      <div class="row no-gutters">
+        {% for people in peoplepages %}
           {% with people=people.specific %}
-            <div class="">
-              <div class="card">
-                {% with people.people_images.first as people_image %}
-                  {% if people_image %}
-                    <a href="{% pageurl people %}">
-                      {% image people_image.image original as tmp_image %}
-                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
-                    </a>
-                  {% endif %}
-                {% endwith %}
-                {#                  <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>#}
-                <div class="card-footer"><a href="{% pageurl people %}">{{ people.title }}</a></div>
+
+          {% with people.people_images.first as people_image %}
+            {% if people_image %}
+              {% image people_image.image original as tmp_image %}
+              <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
+                <a class="lightbox" href="{% pageurl people %}">
+                  <img class="img-fluid image" src="{{ tmp_image.url }}">
+                </a>
               </div>
-            </div>
+            {% endif %}
           {% endwith %}
-        </div>
+
+{#            <div class="">#}
+{#              <div class="card">#}
+{#                {% with people.people_images.first as people_image %}#}
+{#                  {% if people_image %}#}
+{#                    <a href="{% pageurl people %}">#}
+{#                      {% image people_image.image original as tmp_image %}#}
+{#                      <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>#}
+{#                    </a>#}
+{#                  {% endif %}#}
+{#                {% endwith %}#}
+                {#                  <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>#}
+{#                <div class="card-footer"><a href="{% pageurl people %}">{{ people.title }}</a></div>#}
+{#              </div>#}
+{#            </div>#}
+
+          {% endwith %}
       {% endfor %}
     </div>
+  </section>
   </div>
 {% endblock %}
