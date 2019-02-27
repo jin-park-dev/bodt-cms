@@ -108,11 +108,11 @@
       </div>
     </div>
 {#    <div class="home-news-container-new">#}
-    <div class="row ml-1" style="margin-left: 0; margin-right: 0;">
+    <div class="row row-fix ml-1">
       {% for news in newspages %}
         <div class="col-sm-12 col-md-3 home-news-container-item">
           {% with news=news.specific %}
-            <div class="card-deck">
+            <div class="">
               <a href="{% pageurl news %}">
                 {#                Old news code just below #}
                 {#                  {% with news.news_images.first as news_image %}#}
@@ -167,13 +167,13 @@
       </div>
     </div>
 {#    <div class="home-news-container-new-reversed">#}
-    <div class="row mr-1" style="margin-left: 0; margin-right: 0;">
+    <div class="row row-fix mr-1">
       <div class="offset-md-3"></div>
       {% for event in eventpages %}
 {#        <div class="home-news-container-item mr-5">#}
         <div class="col-sm-12 col-md-3 home-news-container-item">
           {% with event=event.specific %}
-            <div class="card-deck">
+            <div class="">
               <div class="card">
                 {% with event.event_images.first as event_image %}
                   {% if event_image %}
@@ -209,11 +209,11 @@
         </a>
       </div>
     </div>
-    <div class="row ml-1" style="margin-left: 0; margin-right: 0;">
+    <div class="row row-fix ml-1">
       {% for show in showpages %}
         <div class="col-sm-12 col-md-3 home-news-container-item">
           {% with show=show.specific %}
-            <div class="card-deck">
+            <div class="">
               <div class="card">
                 {% with show.show_images.first as show_image %}
                   {% if show_image %}
@@ -247,7 +247,7 @@
       {% for people in peoplepages %}
         <div class="home-news-container-item">
           {% with people=people.specific %}
-            <div class="card-deck">
+            <div class="">
               <div class="card">
                 {% with people.people_images.first as people_image %}
                   {% if people_image %}

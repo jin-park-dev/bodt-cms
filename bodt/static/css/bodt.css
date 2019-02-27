@@ -49,6 +49,11 @@ hr {
   color: #0c0c0c;
 }
 
+.row-fix {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
 .card {
   border-top: hidden;
   border-left: hidden;

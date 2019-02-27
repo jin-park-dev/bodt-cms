@@ -31,7 +31,7 @@
   {% for people in peoplepages %}
     <div class="home-news-container-item">
       {% with people=people.specific %}
-        <div class="card-deck">
+        <div class="">
           <div class="card">
             <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
             {% with people.people_images.first as people_image %}
