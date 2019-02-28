@@ -10,9 +10,9 @@
     <h1 class="page-title">Our Team</h1>
   </div>
 
-  <h2>{{ page.title }}</h2>
-  {{ page.intro|richtext }}
-  <hr>
+{#  <h2 class="text-center">{{ page.title }}</h2>#}
+{#  <div class="text-center">{{ page.intro|richtext }}</div>#}
+{#  <hr>#}
 
 {#  {% for people in peoplepages %}#}
 {#    {% with people=people.specific %}#}
@@ -27,28 +27,51 @@
 {#    {% endwith %}#}
 {#  {% endfor %}#}
 
-  <div class="home-members-container">
-  {% for people in peoplepages %}
-    <div class="home-news-container-item">
-      {% with people=people.specific %}
-        <div class="">
-          <div class="card">
-            <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>
-            {% with people.people_images.first as people_image %}
-              {% if people_image %}
-                <a href="{% pageurl people %}">
-                  {% image people_image.image original as tmp_image %}
-                  <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+{#  <div class="home-members-container">#}
+{#  {% for people in peoplepages %}#}
+{#    <div class="home-news-container-item">#}
+{#      {% with people=people.specific %}#}
+{#        <div class="">#}
+{#          <div class="card">#}
+{#            <div class="card-header"><a href="{% pageurl people %}">{{ people.title }}</a></div>#}
+{#            {% with people.people_images.first as people_image %}#}
+{#              {% if people_image %}#}
+{#                <a href="{% pageurl people %}">#}
+{#                  {% image people_image.image original as tmp_image %}#}
+{#                  <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>#}
+{#                </a>#}
+{#              {% endif %}#}
+{#            {% endwith %}#}
+{#            <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>#}
+{#            <div class="card-footer"><a href="{% pageurl people %}">Read more</a></div>#}
+{#          </div>#}
+{#        </div>#}
+{#      {% endwith %}#}
+{#    </div>#}
+{#  {% endfor %}#}
+{#  </div>#}
+
+  <section class="gallery-block compact-gallery">
+    <div class="row no-gutters">
+      {% for people in peoplepages %}
+        {% with people=people.specific %}
+          {% with people.people_images.first as people_image %}
+            {% if people_image %}
+              {% image people_image.image original as tmp_image %}
+              <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
+                <a class="lightbox" href="{% pageurl people %}">
+                  <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}">
+                  <span class="description">
+                            <span class="description-heading">{{ people.title }}</span>
+                            <span class="description-body">{{ people.description|richtext|truncatewords_html:40 }}</span>
+                  </span>
                 </a>
-              {% endif %}
-            {% endwith %}
-            <div class="card-body">{{ people.description|richtext|truncatewords_html:40 }}</div>
-            <div class="card-footer"><a href="{% pageurl people %}">Read more</a></div>
-          </div>
-        </div>
-      {% endwith %}
+              </div>
+            {% endif %}
+          {% endwith %}
+        {% endwith %}
+      {% endfor %}
     </div>
-  {% endfor %}
-  </div>
+  </section>
 
 {% endblock %}
