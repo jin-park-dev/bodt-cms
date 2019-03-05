@@ -11,27 +11,32 @@
   </div>
 
   <div class="container-fluid ">
-  <div class="m-5">
-  <div class="row">
-    <div class="col">
-      <h1>{{ page.title }}</h1>
-      {{ page.intro|richtext }}
-      <form action="{% pageurl page %}" method="POST">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-primary" >Submit</button>
-      </form>
-      <br />
-      <a href="{{ page.get_parent.url }}">Return to Home Page</a>
-    </div>
+    <div class="m-5">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+          <h1>{{ page.title }}</h1>
+          {{ page.intro|richtext }}
+          <form action="{% pageurl page %}" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <br/>
+        </div>
 
-    <div class="col">
-      <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=wolfson%20college%20cambridge&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de/google-maps/"></a></div><style>.mapouter{text-align:right;height:500px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6">
+          <div class="map-responsive">
+            <iframe id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=wolfson%20college%20cambridge&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <a href="https://www.pureblack.de/google-maps/"></a></div>
+        </div>
+
+      </div>
+      <div class="row">
+        <a href="{{ page.get_parent.url }}">Return to Home Page</a>
       </div>
     </div>
-
-  </div>
-  </div>
 
   </div>
 

@@ -324,6 +324,19 @@ hr {
   color: whitesmoke;
 }
 
+.map-responsive {
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
 .news-hero {
   background-image: url("img/egla.jpg");
   background-repeat: no-repeat;
