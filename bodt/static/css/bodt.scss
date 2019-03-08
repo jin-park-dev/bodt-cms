@@ -159,6 +159,11 @@ hr {
   color: #b7bbc2 !important;
 }
 
+.nav-active {
+  background-color: #696c70;
+  border-radius: 5px;
+}
+
 //
 // HOME PAGE //
 //
@@ -283,7 +288,7 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 
 .home-section-body {
   //border-top: 1px solid rgba(0,0,0,0.1);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  //border-bottom: 1px solid rgba(0,0,0,0.1);
   //padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
@@ -291,7 +296,6 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   margin: 30px auto 15px auto;
 
   font-size: 30px;
-
 }
 
 .home-section-news {

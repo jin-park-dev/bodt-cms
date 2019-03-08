@@ -17,7 +17,7 @@
 {#    </div>#}
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 {#      <ul class="navbar-nav nav-fill w-100">#}
-      <ul class="nav ml-auto navbar-nav">
+      <ul class="nav ml-auto navbar-nav " id="navBar">
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
@@ -44,3 +44,26 @@
 {#  </div>#}
 </nav>
 
+<script>
+  // Get the container element
+  let navContainer = document.getElementById("navBar");
+
+  // Get all buttons with class="btn" inside the container
+  let navs = navContainer.getElementsByClassName("nav-item");
+
+  let currentPathSub = window.location.pathname.split('/')[1]
+
+  // Loop through the buttons and add the active class to the current/clicked button
+  for (var i = 0; i < navs.length; i++) {
+      let li = navs[i]
+      let a = li.childNodes[1]
+      let aHref = a.href
+      let path = aHref.split('/')
+      let pathSub = path[3]
+      if (currentPathSub === pathSub) {
+          console.log(li)
+          console.log(li.className)
+          li.className = li.className + " nav-active"
+      }
+  }
+</script>

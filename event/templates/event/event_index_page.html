@@ -10,15 +10,17 @@
     <h1 class="page-title">Events - Our Regular Classes/Social</h1>
   </div>
 
-  <h2 class="text-center">{{ page.title }}</h2>
-  <div class="text-center">{{ page.intro|richtext }}</div>
+{#  <h2 class="text-center">{{ page.title }}</h2>#}
+{#  <div class="text-center">{{ page.intro|richtext }}</div>#}
 
-  <hr>
+  <div class="home-section-body">
+    {{ page.intro|richtext }}
+  </div>
 
   <div class="container-fluid">
     {% for event in eventpages %}
       {% if forloop.counter0|divisibleby:2 %}
-        <div class="row" style="background-color: #f8d7da">
+        <div class="row" style="background-color: #232323b5">
           <div class="col-4">
             {% include 'event/snippets/event.html' %}
           </div>
@@ -27,7 +29,7 @@
           </div>
         </div>
       {% else %}
-        <div class="row" style="background-color: #a4c1f8">
+        <div class="row" style="background-color: #a2c4c9">
           <div class="col-8">
             Some info here? Description? Quote?
           </div>
