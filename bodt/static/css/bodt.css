@@ -197,19 +197,23 @@ hr {
 }
 
 .home-section-shows {
-  background-color: #ffdecc;
+  background-color: #232323b5;
   padding: 35px 0 35px 0;
 }
 
 .home-news-container-new {
-  display: flex;
-  margin-left: 5px;
+  background-color: #696c70;
+  padding: 50px 0 50px 0.25rem;
 }
 
 .home-news-container-new-reversed {
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 15px;
+  background-color: #89a6ab;
+  padding: 50px 0.25rem 50px 0px;
+}
+
+.home-shows-container-new {
+  background-color: #696c70;
+  padding: 50px 0 50px 0.25rem;
 }
 
 .home-news-container {

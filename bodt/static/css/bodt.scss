@@ -306,23 +306,28 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 }
 
 .home-section-shows {
-  background-color: #ffdecc;
+  background-color: #232323b5;
   //margin-bottom: 15px;
   padding: 35px 0 35px 0;
 }
 
 .home-news-container-new {
-  display: flex;
-  margin-left: 5px;
+  background-color: #696c70;
+  //padding: 50px 100px 50px 0px;
+  padding: 50px 0 50px 0.25rem;
+  //width: 80%;
 }
 
 .home-news-container-new-reversed {
-  display: flex;
-  //flex-direction: row-reverse;
-  justify-content: flex-end;
-  margin-right: 15px;
+  background-color: #89a6ab;
+  //padding: 50px 100px 50px 0px;
+  padding: 50px 0.25rem 50px 0px;
 }
 
+.home-shows-container-new {
+  background-color: #696c70;
+  padding: 50px 0 50px 0.25rem;
+}
 
 .home-news-container {
   display: grid;
