@@ -57,7 +57,7 @@
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-2.jpg" %}">
-            <img class="img-fluid image center-cropped" src="{% static "img/home/home-g-2.jpg" %}">
+            <img class="img-fluid image " src="{% static "img/home/home-g-2.jpg" %}">
           </a>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
@@ -245,7 +245,7 @@
         </a>
       </div>
     </div>
-    <section class="gallery-block compact-gallery">
+    <div class="gallery-block compact-gallery">
       <div class="row no-gutters">
         {% for people in peoplepages %}
           {% with people=people.specific %}
@@ -253,9 +253,9 @@
           {% with people.people_images.first as people_image %}
             {% if people_image %}
               {% image people_image.image original as tmp_image %}
-              <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
+              <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
                 <a class="lightbox" href="{% pageurl people %}">
-                  <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}">
+                  <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}" style="max-height: 275px">
                   <span class="description">
                             <span class="description-heading">{{ people.title }}</span>
                             <span class="description-body"></span>
@@ -283,6 +283,6 @@
           {% endwith %}
       {% endfor %}
     </div>
-  </section>
+  </div>
   </div>
 {% endblock %}
