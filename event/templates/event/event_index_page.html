@@ -24,7 +24,7 @@
         {% if forloop.counter0|divisibleby:2 %}
 
           <div class="row" style="background-color: #232323b5">
-            <div class="col-5 p-0">
+            <div class="col-md-5 p-0">
 
               <div class="">
                 {% with event.main_image as main_image %}
@@ -41,7 +41,7 @@
 
             </div>
 
-            <div class="col-7">
+            <div class="col-md-7">
               <h1>{{ event.name }}</h1>
               <div>Date: {{ event.date_event }}</div>
               <div>Location: {{ event.address }}</div>
@@ -54,7 +54,7 @@
         {% else %}
 
           <div class="row" style="background-color: #a2c4c9">
-            <div class="col-7">
+            <div class="col-md-7">
               <h1>{{ event.name }}</h1>
               <div>Date: {{ event.date_event }}</div>
               <div>Location: {{ event.address }}</div>
@@ -62,7 +62,7 @@
               <hr>
               <p>{{ event.short_intro|richtext }}</p>
             </div>
-            <div class="col-5 p-0">
+            <div class="col-md-5 p-0">
               <div class="">
                 {% with event.main_image as main_image %}
                   <a href="{% pageurl event %}">
