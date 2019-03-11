@@ -1,0 +1,52 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+<div class="gallery-block compact-gallery">
+  <div class="">
+    <div class="row no-gutters">
+      <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+        <a class="lightbox" href="{% static "img/home/home-g-1.jpg" %}">
+          <img class="img-fluid image" src="{% static "img/home/home-g-1.jpg" %}">
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+        <a class="lightbox" href="{% static "img/home/home-g-2.jpg" %}">
+          <img class="img-fluid image center-cropped" src="{% static "img/home/home-g-2.jpg" %}">
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+        <a class="lightbox" href="{% static "img/home/home-g-3.jpg" %}">
+          <img class="img-fluid image" src="{% static "img/home/home-g-3.jpg" %}">
+        </a>
+      </div>
+      <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+        <a class="lightbox" href="{% static "img/home/home-g-4.jpg" %}">
+          <img class="img-fluid image" src="{% static "img/home/home-g-4.jpg" %}">
+        </a>
+      </div>
+{#      <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">#}
+{#        <a class="lightbox" href="{% static "img/home/home-g-5.jpg" %}">#}
+{#          <img class="img-fluid image" src="{% static "img/home/home-g-5.jpg" %}">#}
+{#        </a>#}
+{#      </div>#}
+{#      <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">#}
+{#        <a class="lightbox" href="{% static "img/home/home-g-6.jpg" %}">#}
+{#          <img class="img-fluid image" src="{% static "img/home/home-g-6.jpg" %}">#}
+{#        </a>#}
+{#      </div>#}
+{#      <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">#}
+{#        <a class="lightbox" href="{% static "img/home/home-g-7.jpg" %}">#}
+{#          <img class="img-fluid image" src="{% static "img/home/home-g-7.jpg" %}">#}
+{#        </a>#}
+{#      </div>#}
+{#      <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">#}
+{#        <a class="lightbox" href="{% static "img/home/home-g-8.jpg" %}">#}
+{#          <img class="img-fluid image" src="{% static "img/home/home-g-8.jpg" %}">#}
+{#        </a>#}
+{#      </div>#}
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script>
+    baguetteBox.run('.compact-gallery', { animation: 'slideIn'});
+</script>

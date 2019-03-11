@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}
 {% endblock %}
@@ -19,25 +19,66 @@
 
   <div class="container-fluid">
     {% for event in eventpages %}
-      {% if forloop.counter0|divisibleby:2 %}
-        <div class="row" style="background-color: #232323b5">
-          <div class="col-4">
-            {% include 'event/snippets/event.html' %}
+      {% with event=event.specific %}
+
+        {% if forloop.counter0|divisibleby:2 %}
+
+          <div class="row" style="background-color: #232323b5">
+            <div class="col-5 p-0">
+
+              <div class="">
+                {% with event.main_image as main_image %}
+                  <a href="{% pageurl event %}">
+                    {% image main_image original as tmp_image %}
+                    <div class="img-center-cropped-events" style="background-image: url('{{ tmp_image.url }}');"></div>
+                  </a>
+                {% endwith %}
+              </div>
+
+              <div class="">
+                {% include 'event/snippets/lightbox.html' %}
+              </div>
+
+            </div>
+
+            <div class="col-7">
+              <h1>{{ event.name }}</h1>
+              <div>Date: {{ event.date_event }}</div>
+              <div>Location: {{ event.address }}</div>
+              <br />
+              <hr>
+              <p>{{ event.short_intro|richtext }}</p>
+            </div>
           </div>
-          <div class="col-8">
-            Some info here? Description? Quote?
+
+        {% else %}
+
+          <div class="row" style="background-color: #a2c4c9">
+            <div class="col-7">
+              <h1>{{ event.name }}</h1>
+              <div>Date: {{ event.date_event }}</div>
+              <div>Location: {{ event.address }}</div>
+              <br/>
+              <hr>
+              <p>{{ event.short_intro|richtext }}</p>
+            </div>
+            <div class="col-5 p-0">
+              <div class="">
+                {% with event.main_image as main_image %}
+                  <a href="{% pageurl event %}">
+                    {% image main_image original as tmp_image %}
+                    <div class="img-center-cropped-events" style="background-image: url('{{ tmp_image.url }}');"></div>
+                  </a>
+                {% endwith %}
+              </div>
+              <div class="">
+                {% include 'event/snippets/lightbox.html' %}
+              </div>
+            </div>
           </div>
-        </div>
-      {% else %}
-        <div class="row" style="background-color: #a2c4c9">
-          <div class="col-8">
-            Some info here? Description? Quote?
-          </div>
-          <div class="col-4">
-            {% include 'event/snippets/event.html' %}
-          </div>
-        </div>
-      {% endif %}
+
+        {% endif %}
+      {% endwith %}
     {% endfor %}
   </div>
 {% endblock %}
