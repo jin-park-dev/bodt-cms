@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags embed_video_tags %}
+{% load static wagtailcore_tags wagtailimages_tags embed_video_tags %}
 
 {% block body_class %}
 {% endblock %}
 
 {% block content %}
-  <div class="show-hero">
-    <h1 class="text-center page-title">Bachata Obsesión's choreographs</h1>
+{#  <div class="show-hero">#}
+{#    <h1 class="text-center page-title">Bachata Obsesión's choreographs</h1>#}
+{#  </div>#}
+
+  <div class="hero-fit">
+    <img src="{% static "css/img/show-hero.png" %}" class="img-hero-cover-fit"/>
+    <div class="centered page-title">Bachata Obsesión's choreographs</div>
   </div>
 
   <div class="container-fluid">

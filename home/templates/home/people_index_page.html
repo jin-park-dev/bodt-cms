@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags %}
 
 {% block body_class %}
 {% endblock %}
 
 {% block content %}
-  <div class="members-hero">
-    <h1 class="page-title">Our Team</h1>
+{#  <div class="members-hero">#}
+{#    <h1 class="page-title">Our Team</h1>#}
+{#  </div>#}
+
+  <div class="hero-fit">
+    <img src="{% static "css/img/our-team.jpg" %}" class="img-hero-cover-fit"/>
+    <div class="centered page-title">Our Team</div>
   </div>
 
 {#  <h2 class="text-center">{{ page.title }}</h2>#}

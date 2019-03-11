@@ -6,10 +6,14 @@
 {% endblock %}
 
 {% block content %}
-  <div class="events-hero">
-    <h1 class="page-title">Events - Our Regular Classes/Social</h1>
-  </div>
+{#  <div class="events-hero">#}
+{#    <h1 class="page-title">Events - Our Regular Classes/Social</h1>#}
+{#  </div>#}
 
+  <div class="hero-fit">
+    <img src="{% static "css/img/events-hero.jpg" %}" class="img-hero-cover-fit"/>
+    <div class="centered page-title">Events - Our Regular Classes/Social</div>
+  </div>
 {#  <h2 class="text-center">{{ page.title }}</h2>#}
 {#  <div class="text-center">{{ page.intro|richtext }}</div>#}
 
@@ -54,7 +58,7 @@
         {% else %}
 
           <div class="row" style="background-color: #a2c4c9">
-            <div class="col-md-7">
+            <div class="col-md-7 mobile-responsive-order-first">
               <h1>{{ event.name }}</h1>
               <div>Date: {{ event.date_event }}</div>
               <div>Location: {{ event.address }}</div>
@@ -62,7 +66,7 @@
               <hr>
               <p>{{ event.short_intro|richtext }}</p>
             </div>
-            <div class="col-md-5 p-0">
+            <div class="col-md-5 p-0 ">
               <div class="">
                 {% with event.main_image as main_image %}
                   <a href="{% pageurl event %}">

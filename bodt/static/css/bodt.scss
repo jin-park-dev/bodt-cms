@@ -141,6 +141,11 @@ hr {
   color: whitesmoke;
   padding: 1rem;
   font-size: 70px;
+  //max-width: 90%;
+  //width: 100%;
+  //width: inherit;
+  font-family: 'Cabin', sans-serif;
+
 }
 
 //
@@ -590,7 +595,7 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 //
 
 .members-hero {
-  background-image:url("img/members-hero.jpg");
+  //background-image:url("img/members-hero.jpg");
   background-image:url("img/our-team.jpg");
   background-repeat:no-repeat;
   background-size:cover;
@@ -654,6 +659,36 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 
 
 //
+// SHARED BETWEEN PAGES
+//
+
+
+.hero-fit {
+  height: 751px;
+  color: whitesmoke;
+
+  position: relative;
+  text-align: center;
+  font-size: 70px;
+
+}
+
+.img-hero-cover-fit {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+//
 //
 //
 // SHARED COMMON CSS //
@@ -668,4 +703,14 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 .aboutus-hero > h1,
 .show-hero > h1 {
   font-size: 70px;
+}
+
+// order: 0 = first item
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .mobile-responsive-order-first {
+    order: 1;
+  }
 }

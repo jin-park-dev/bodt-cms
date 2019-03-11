@@ -93,6 +93,7 @@ hr {
   color: whitesmoke;
   padding: 1rem;
   font-size: 70px;
+  font-family: "Cabin", sans-serif;
 }
 
 .navbar {
@@ -405,7 +406,6 @@ hr {
 }
 
 .members-hero {
-  background-image: url("img/members-hero.jpg");
   background-image: url("img/our-team.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -442,6 +442,27 @@ hr {
   color: whitesmoke;
 }
 
+.hero-fit {
+  height: 751px;
+  color: whitesmoke;
+  position: relative;
+  text-align: center;
+  font-size: 70px;
+}
+
+.img-hero-cover-fit {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .contact-hero > h1,
 .home-hero > h1,
 .news-hero > h1,
@@ -449,6 +470,13 @@ hr {
 .aboutus-hero > h1,
 .show-hero > h1 {
   font-size: 70px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .mobile-responsive-order-first {
+    order: 1;
+  }
 }
 
 /*# sourceMappingURL=bodt.css.map */
