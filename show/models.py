@@ -17,14 +17,18 @@ class ShowIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
-    subpage_types = ['ShowPage']
-
     def get_context(self, request):
         # Update context to include only active show, ordered by newest
         context = super().get_context(request)
-        showpages = self.get_children().live().order_by('-first_published_at')
+
+        # showpages = self.get_children().live().order_by('-first_published_at')
+        showpages = ShowPage.objects.live().order_by('-date')
+
         context['showpages'] = showpages
         context['showpage_first'] = showpages[0]
+
+        print()
+
         return context
 
 
@@ -57,7 +61,13 @@ class ShowPage(Page):
     def get_context(self, request):
         # Update context to include only active show, ordered by newest
         context = super().get_context(request)
-        showpages = Page.objects.get(slug='shows').get_children().live().order_by('-first_published_at')
+        # showpages = Page.objects.get(slug='shows').get_children().live().order_by('-first_published_at')
+
+        show_slug = Page.objects.get(slug='shows')
+        print(show_slug)
+
+        showpages = ShowPage.objects.live().order_by('-date')
+
         context['showpages'] = showpages
         context['showpage_first'] = self
 
