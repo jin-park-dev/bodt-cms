@@ -13,3 +13,5 @@ fabfile.py
 .backup
 
 db.sqlite3.*
+
+sync-serv-to-me.sh
