@@ -50,7 +50,8 @@ class HomePage(Page):
         eventpages = EventPage.objects.live().order_by('-first_published_at')[0:3]
         context['eventpages'] = eventpages
 
-        peoplepages = PeoplePage.objects.live().order_by('-first_published_at')
+        # peoplepages = PeoplePage.objects.live().order_by('-first_published_at')[0:8]
+        peoplepages = PeoplePage.objects.live().order_by('?')[0:8]
         context['peoplepages'] = peoplepages
 
         showpages = ShowPage.objects.live().order_by('-first_published_at')
@@ -130,6 +131,7 @@ class PeoplePageGalleryImage(Orderable):
 """
 Uses wagtail's built in class to create simple form
 """
+
 
 class ContactUsFormField(AbstractFormField):
 
