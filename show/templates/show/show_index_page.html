@@ -28,7 +28,9 @@
               <div class="showspages-container-item">
 
               {% with show=show.specific %}
-                <h2 class="h1-animation"><a href="{% pageurl show %}">{{ show.title }}</a></h2>
+                <h2 class="h1-animation title-show-side"><a href="{% pageurl show %}">
+                  {{ show.date|date:"Y" }} - {{ show.title }}
+                </a></h2>
 
                 {% with show.main_image as main_image %}
                   {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
@@ -63,7 +65,7 @@
       {{ showpage_first.specific.video.url }}
     </div>
 
-      <div class="show-main-item-info">
+      <div class="show-main-item-info text-center">
         <div class="show-main-item-info-container">
           <div class="show-main-item-info-container-item">{{ showpage_first.specific.body|richtext }}</div>
         </div>

@@ -282,6 +282,10 @@ hr {
   font-size: 30px;
 }
 
+.title-show-side {
+  font-size: 30px;
+}
+
 .show-main-item-menu {
   grid-area: menu;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
