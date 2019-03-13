@@ -17,6 +17,8 @@ class ShowIndexPage(Page):
         FieldPanel('intro', classname="full")
     ]
 
+    subpage_types = ['ShowPage']
+
     def get_context(self, request):
         # Update context to include only active show, ordered by newest
         context = super().get_context(request)

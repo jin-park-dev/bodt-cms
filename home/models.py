@@ -54,7 +54,7 @@ class HomePage(Page):
         peoplepages = PeoplePage.objects.live().order_by('?')[0:8]
         context['peoplepages'] = peoplepages
 
-        showpages = ShowPage.objects.live().order_by('-first_published_at')
+        showpages = ShowPage.objects.live().order_by('-first_published_at')[0:3]
         context['showpages'] = showpages
 
         return context
