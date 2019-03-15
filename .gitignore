@@ -14,8 +14,10 @@ fabfile.py
 
 db.sqlite3.*
 
-sync-serv-to-me.sh
 .python-version
 
 media_old
 media
+
+sync-serv-to-me.sh
+*.sh
