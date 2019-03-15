@@ -435,6 +435,26 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   overflow-y: scroll;
   overflow-x: auto;
 }
+
+// Must have this to make scroll bar always appear at least on MacOS
+.show-main-item-menu::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.show-main-item-menu::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+.show-main-item-menu::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.show-main-item-menu::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, .5);
+}
+
 .show-main-item-main {
   grid-area: main;
   //background-color: #e9ffc5;
