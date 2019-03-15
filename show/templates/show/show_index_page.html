@@ -22,16 +22,13 @@
     <div class="show-main-container">
 
       <div class="show-main-item-menu">
-        <div class="showspages-container-wrapper">
-          <div class="showspages-container">
             {% for show in showpages %}
-              <div class="showspages-container-item">
+              <div class="showspages-menu-item">
 
               {% with show=show.specific %}
                 <h2 class="h1-animation title-show-side"><a href="{% pageurl show %}">
                   {{ show.date|date:"Y" }} - {{ show.title }}
                 </a></h2>
-
                 {% with show.main_image as main_image %}
                   {% if main_image %}{% image main_image fill-160x100 %}{% endif %}
                 {% endwith %}
@@ -42,8 +39,6 @@
               </div>
               <hr>
             {% endfor %}
-          </div>
-        </div>
       </div>
 
       <div class="show-main-item-main">

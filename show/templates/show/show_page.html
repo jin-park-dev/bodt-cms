@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags wagtailimages_tags embed_video_tags %}
+{% load static wagtailcore_tags wagtailimages_tags embed_video_tags %}
 
 {% block body_class %}
 {% endblock %}
 
 {% block content %}
-  <div class="show-hero">
-    <h1 class="text-center page-title">Bachata Obsesión's choreographs</h1>
+{#  <div class="show-hero">#}
+{#    <h1 class="text-center page-title">Bachata Obsesión's choreographs</h1>#}
+{#  </div>#}
+
+  <div class="hero-fit">
+    <img src="{% static "css/img/show-hero.png" %}" class="img-hero-cover-fit"/>
+    <div class="centered page-title">Bachata Obsesión's choreographs</div>
   </div>
 
   <div class="container-fluid">
@@ -17,10 +22,8 @@
     <div class="show-main-container">
 
       <div class="show-main-item-menu">
-        <div class="showspages-container-wrapper">
-          <div class="showspages-container">
             {% for show in showpages %}
-              <div class="showspages-container-item">
+              <div class="showspages-menu-item">
                 {% with show=show.specific %}
                   <h2 class="h1-animation title-show-side"><a href="{% pageurl show %}">
                     {{ show.date|date:"Y" }} - {{ show.title }}
@@ -37,8 +40,6 @@
               </div>
               <hr>
             {% endfor %}
-          </div>
-        </div>
       </div>
 
       <div class="show-main-item-main">

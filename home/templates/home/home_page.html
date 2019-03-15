@@ -125,10 +125,10 @@
       </div>
     </div>
     <div class="row row-fix">
-      <div class="home-news-container-new col-10">
+      <div class="home-news-container-new col-md-10">
         <div class="row row-fix">
           {% for news in newspages %}
-            <div class="col-sm-12 col-md-3 mt-1 home-news-container-item">
+            <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
               {% with news=news.specific %}
                 <a href="{% pageurl news %}">
                   {#                Old news code just below #}
@@ -177,13 +177,13 @@
     </div>
     {#  <div class="d-flex justify-content-between">#}
     <div class="row row-fix">
-      <div class="col-2"></div>
-      <div class="home-news-container-new-reversed col-10">
+      <div class="col-md-2"></div>
+      <div class="home-news-container-new-reversed col-md-10">
         <div class="row row-fix">
-          <div class="offset-md-3"></div>
+{#          <div class="offset-lg-3 offset-md-0 "></div>#}
           {% for event in eventpages %}
             {#        <div class="home-news-container-item mr-5">#}
-            <div class="col-sm-12 col-md-3 mt-1 home-news-container-item">
+            <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
               {% with event=event.specific %}
                 <div class="">
                   <div class="card">
@@ -224,10 +224,10 @@
       </div>
     </div>
     <div class="row row-fix">
-      <div class="home-shows-container-new col-10">
+      <div class="home-shows-container-new col-md-10">
         <div class="row row-fix">
           {% for show in showpages %}
-            <div class="col-sm-12 col-md-3 mt-1 home-news-container-item">
+            <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
               {% with show=show.specific %}
                 <div class="">
                   <div class="card">

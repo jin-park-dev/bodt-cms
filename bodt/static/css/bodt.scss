@@ -429,8 +429,11 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 
 .show-main-item-menu {
   grid-area: menu;
-  //background-color: #9fcdff;
+  //grid-area: info;
+  ////background-color: #9fcdff;
   border-right: 1px solid rgba(0,0,0,0.1);
+  overflow-y: scroll;
+  overflow-x: auto;
 }
 .show-main-item-main {
   grid-area: main;
@@ -449,33 +452,16 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   //height: 100%;
 }
 
-.showspages-container-wrapper {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
-
-.showspages-container {
+.showspages-menu-item {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
-  //align-content: center;
-
-  //width: 80%;
-
 }
 
-.showspages-container-item {
-  //flex: 0 1 auto;
-  //border-style: solid;
-  //border-width: 1px;
-}
-
-.showspages-container-item a {
-  text-decoration: none;
-  color: inherit;
+.showspages-menu-item a {
+  //text-decoration: none;
+  //color: inherit;
 }
 
 .show-main-item-info-container-item {
@@ -492,6 +478,7 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
     'menu main main main main'
     'menu info info info info';
   margin-bottom: 15px;
+  height: 300px;
 }
 
 

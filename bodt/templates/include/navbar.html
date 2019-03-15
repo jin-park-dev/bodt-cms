@@ -61,8 +61,8 @@
       let path = aHref.split('/')
       let pathSub = path[3]
       if (currentPathSub === pathSub) {
-          console.log(li)
-          console.log(li.className)
+          {#console.log(li)#}
+          {#console.log(li.className)#}
           li.className = li.className + " nav-active"
       }
   }

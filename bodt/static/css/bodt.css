@@ -289,6 +289,8 @@ hr {
 .show-main-item-menu {
   grid-area: menu;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
+  overflow-x: auto;
 }
 
 .show-main-item-main {
@@ -306,22 +308,11 @@ hr {
   justify-content: center;
 }
 
-.showspages-container-wrapper {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
-
-.showspages-container {
+.showspages-menu-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.showspages-container-item a {
-  text-decoration: none;
-  color: inherit;
 }
 
 .show-main-item-info-container-item {
@@ -332,6 +323,7 @@ hr {
   display: grid;
   grid-template-areas: "menu main main main main" "menu main main main main" "menu main main main main" "menu main main main main" "menu main main main main" "menu info info info info";
   margin-bottom: 15px;
+  height: 300px;
 }
 
 .contact-hero {
