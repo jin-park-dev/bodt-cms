@@ -24,9 +24,8 @@
 {#          <div class="row justify-content-between justify-content-lg-center ">#}
             {% for show in showpages %}
 {#              <div class="col-md-2 col-lg-1 col-sm-3 col-4 item item-show zoom-on-hover">#}
-              <div class="show-main-item-menu-v2">
+              <div class="show-main-item-menu-v2 item item-show zoom-on-hover">
                 {% with show=show.specific %}
-                  <a href="{% pageurl show %}">
                   <div class="text-center">{{ show.date|date:"Y" }}</div>
                   <div class="h1-animation" style="font-size: 15px"><a href="{% pageurl show %}">
                     {{ show.title }}
@@ -36,15 +35,12 @@
 {#                    {% image main_image original as tmp_image %}#}
 {#                    {% image main_image fill-160x100 as tmp_image %}#}
                     {% image main_image fill-320x200 as tmp_image %}
-                    <div class="item item-show zoom-on-hover">
                     <a class="lightbox" href="{% pageurl show %}">
                       {% if main_image %}
                         <img class="img-fluid image" src="{{ tmp_image.url }}">
                       {% endif %}
                     </a>
-                    </div>
                   {% endwith %}
-                  </a>
                 {% endwith %}
               </div>
             {% endfor %}

@@ -313,6 +313,40 @@ hr {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.show-main-item-menu-v2 {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-x: scroll;
+  min-width: 150px;
+}
+
+.show-main-item-menu-v2 a {
+  color: inherit;
+}
+
+.show-main-item-menu-v2 a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.show-main-item-menu-v2::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.show-main-item-menu-v2::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+.show-main-item-menu-v2::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.show-main-item-menu-v2::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .show-main-item-main {
   grid-area: main;
 }
@@ -378,11 +412,6 @@ hr {
   margin-bottom: 1em;
   font-size: 1.3em;
   font-weight: bold;
-}
-
-.gallery-block-shows {
-  background-color: white !important;
-  padding: -30px;
 }
 
 .gallery-block.compact-gallery .item-show {

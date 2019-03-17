@@ -454,6 +454,41 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   background-color: rgba(0, 0, 0, .5);
 }
 
+.show-main-item-menu-v2 {
+  border-right: 1px solid rgba(0,0,0,0.1);
+  //overflow-y: scroll;
+  overflow-x: scroll;
+  min-width: 150px;
+}
+
+.show-main-item-menu-v2 a {
+  color: inherit;
+}
+
+.show-main-item-menu-v2 a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Must have this to make scroll bar always appear at least on MacOS
+.show-main-item-menu-v2::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.show-main-item-menu-v2::-webkit-scrollbar:vertical {
+  width: 11px;
+}
+
+.show-main-item-menu-v2::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.show-main-item-menu-v2::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white; /* should match background, can't be transparent */
+  background-color: rgba(0, 0, 0, .5);
+}
+
 .show-main-item-main {
   grid-area: main;
   //background-color: #e9ffc5;
@@ -553,15 +588,11 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 
 // Override default lighthouse settings
 .gallery-block-shows {
-  background-color: white !important;
-  padding: -30px;
+  //background-color: white !important;
 }
 
 .gallery-block.compact-gallery .item-show {
-  //overflow: hidden;
-  //margin-bottom: 0;
   background: inherit !important;
-  //opacity: 1;
 }
 
 
