@@ -470,6 +470,13 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   text-decoration: none;
 }
 
+// Firefox only and doesn't work on MacOS :(
+.scroller {
+  overflow-y: scroll;
+  //scrollbar-color: red green;
+  //scrollbar-width: thin;
+}
+
 // Must have this to make scroll bar always appear at least on MacOS
 .show-main-item-menu-v2::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -487,6 +494,10 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   border-radius: 8px;
   border: 2px solid white; /* should match background, can't be transparent */
   background-color: rgba(0, 0, 0, .5);
+}
+
+show-main-item-menu-v2-lightbox {
+  overflow-x: hidden;
 }
 
 .show-main-item-main {
@@ -556,11 +567,6 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
   grid-column: span 3;
 }
 
-.show-g-main {
-  flex: 1;
-  padding: 20px;
-}
-
 .show-g-nav {
   background-color: #f90;
   padding: 20px;
@@ -594,7 +600,6 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 .gallery-block.compact-gallery .item-show {
   background: inherit !important;
 }
-
 
 
 //

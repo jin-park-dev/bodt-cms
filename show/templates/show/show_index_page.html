@@ -20,7 +20,7 @@
 {#    <div class="show-g-container">#}
       <div class="show-g-header">
         {#        <div class="d-flex">#}
-        <div class="d-flex flex-row gallery-block compact-gallery show-main-item-menu-v2">
+        <div class="d-flex flex-row gallery-block compact-gallery show-main-item-menu-v2 scroller">
 {#          <div class="row justify-content-between justify-content-lg-center ">#}
             {% for show in showpages %}
 {#              <div class="col-md-2 col-lg-1 col-sm-3 col-4 item item-show zoom-on-hover">#}
@@ -36,7 +36,7 @@
 {#                    {% image main_image original as tmp_image %}#}
 {#                    {% image main_image fill-160x100 as tmp_image %}#}
                     {% image main_image fill-320x200 as tmp_image %}
-                    <div class="item item-show zoom-on-hover">
+                    <div class="item item-show zoom-on-hover ">
                     <a class="lightbox" href="{% pageurl show %}">
                       {% if main_image %}
                         <img class="img-fluid image" src="{{ tmp_image.url }}">
@@ -52,11 +52,11 @@
         </div>
       </div>
 {#      <div class="show-g-nav"></div>#}
-      <div class="show-g-main">
+      <div class="container">
 {#        <div class="show-g-h1">Main</div>#}
         <div class="show-main-item-main">
-          <h1 class="text-center mt-2">
-            {{ showpage_first.specific.title }} - {{ showpage_first.specific.date|date:"Y" }}
+          <h1 class="text-center mt-0">
+            {{ showpage_first.specific.date|date:"Y" }} - {{ showpage_first.specific.title }}
           </h1>
           {#        {{ showpage_first.specific.intro }}#}
           <div class="text-center">
