@@ -146,7 +146,8 @@
   </div>
 </div>
 {% block js %}
-  <script src="{% static 'puput/js/jquery.min.js' %}"></script>
+  {% include 'include/base-js.html' %}
+{#  <script src="{% static 'puput/js/jquery.min.js' %}"></script>#}
   <script src="{% static 'puput/js/puput.js' %}"></script>
 {% endblock js %}
 </body>
