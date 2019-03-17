@@ -15,7 +15,72 @@
     <div class="centered page-title">Bachata Obsesión's choreographs</div>
   </div>
 
-  <div class="container-fluid">
+  <div class="">
+
+{#    <div class="show-g-container">#}
+      <div class="show-g-header">
+        {#        <div class="d-flex">#}
+        <div class="gallery-block compact-gallery gallery-block-shows">
+          <div class="row justify-content-between justify-content-lg-center ">
+            {% for show in showpages %}
+              <div class="col-md-2 col-lg-1 col-sm-3 col-4 item item-show zoom-on-hover">
+                {% with show=show.specific %}
+                  <div class="text-center">{{ show.date|date:"Y" }}</div>
+                  <div class="h1-animation" style="font-size: 15px"><a href="{% pageurl show %}">
+                    {{ show.title }}
+                  </a></div>
+                  {% with show.main_image as main_image %}
+{#                    {% if main_image %}{% image main_image fill-160x100 %}{% endif %}#}
+{#                    {% image main_image original as tmp_image %}#}
+{#                    {% image main_image fill-160x100 as tmp_image %}#}
+                    {% image main_image fill-320x200 as tmp_image %}
+                    <a class="lightbox" href="{{ tmp_image.url }}">
+                      {% if main_image %}
+                        <img class="img-fluid image" src="{{ tmp_image.url }}">
+
+                      {% endif %}
+                    </a>
+                  {% endwith %}
+                {% endwith %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+{#      <div class="show-g-nav"></div>#}
+      <div class="show-g-main">
+        <div class="show-g-h1">Main</div>
+        <div class="show-main-item-main">
+          <h1 class="text-center mt-2">
+            {{ showpage_first.specific.title }} - {{ showpage_first.specific.date|date:"Y" }}
+          </h1>
+          {#        {{ showpage_first.specific.intro }}#}
+          <div class="text-center">
+            {% video showpage_first.specific.video is_secure=True as my_video %}
+              {#        {% video my_video "large" %}#}
+              {#            secure=>{{ my_video.url }}#}
+              {#            {% video my_video '800x600' %}#}
+
+              {#              <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="{{ my_video.url }}" width="560" height="340" frameborder="0"></iframe>#}
+              <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='{{ my_video.url }}' frameborder='0' allowfullscreen></iframe></div>
+            {% endvideo %}
+          </div>
+        </div>
+
+        <div>
+          {{ showpage_first.specific.video.url }}
+        </div>
+
+        <div class="show-main-item-info text-center">
+          <div class="show-main-item-info-container">
+            <div class="show-main-item-info-container-item">{{ showpage_first.specific.body|richtext }}</div>
+          </div>
+        </div>
+      </div>
+{#      <div class="show-g-aside">Related links</div>#}
+{#      <div class="show-g-footer">Footer</div>#}
+    </div>
+
     {#  <h2 class="text-center">{{ page.title }}</h2>#}
     <div class="show-section-body">{{ page.intro|richtext }}</div>
     <hr>

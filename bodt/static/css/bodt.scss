@@ -429,8 +429,6 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
 
 .show-main-item-menu {
   grid-area: menu;
-  //grid-area: info;
-  ////background-color: #9fcdff;
   border-right: 1px solid rgba(0,0,0,0.1);
   overflow-y: scroll;
   overflow-x: auto;
@@ -500,6 +498,70 @@ $zoomscale: 1.01; //1 to disable this part. 1.02 is enough.
     'menu info info info info';
   margin-bottom: 15px;
   height: 300px;
+}
+
+
+//.show-g-container {
+//  display: flex;
+//  //flex-direction: column;
+//  min-height: 100vh;
+//}
+//
+//
+//@media (min-width: 768px) {
+//  .show-g-container {
+//    display: grid;
+//    grid-template-columns: 200px 1fr 200px;
+//    grid-template-rows: auto 1fr auto;
+//
+//  }
+//}
+
+.show-g-header {
+  grid-column: span 3;
+}
+
+.show-g-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.show-g-nav {
+  background-color: #f90;
+  padding: 20px;
+}
+
+.show-g-aside {
+  padding: 20px;
+  background-color: #936;
+}
+
+.show-g-footer {
+  grid-column: span 3;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #690;
+  color: white;
+}
+
+.show-g-h1 {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+// Override default lighthouse settings
+.gallery-block-shows {
+  background-color: white !important;
+  padding: -30px;
+}
+
+.gallery-block.compact-gallery .item-show {
+  //overflow: hidden;
+  //margin-bottom: 0;
+  background: inherit !important;
+  //opacity: 1;
 }
 
 

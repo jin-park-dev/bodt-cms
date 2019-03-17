@@ -346,6 +346,49 @@ hr {
   height: 300px;
 }
 
+.show-g-header {
+  grid-column: span 3;
+}
+
+.show-g-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.show-g-nav {
+  background-color: #f90;
+  padding: 20px;
+}
+
+.show-g-aside {
+  padding: 20px;
+  background-color: #936;
+}
+
+.show-g-footer {
+  grid-column: span 3;
+  padding: 30px;
+  text-align: center;
+  font-size: 1.4em;
+  background-color: #690;
+  color: white;
+}
+
+.show-g-h1 {
+  margin-bottom: 1em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.gallery-block-shows {
+  background-color: white !important;
+  padding: -30px;
+}
+
+.gallery-block.compact-gallery .item-show {
+  background: inherit !important;
+}
+
 .contact-hero {
   background-image: url("img/performance-2019-after-norwich-madlove.jpg");
   background-repeat: no-repeat;
