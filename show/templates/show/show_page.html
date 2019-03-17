@@ -49,7 +49,8 @@
         {#        {{ showpage_first.specific.intro }}#}
         <div class="text-center">
           {% video showpage_first.specific.video is_secure=True as my_video %}
-          <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="{{ my_video.url }}" width="560" height="340" frameborder="0"></iframe>
+{#          <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" src="{{ my_video.url }}" width="560" height="340" frameborder="0"></iframe>#}
+            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='{{ my_video.url }}' frameborder='0' allowfullscreen></iframe></div>
           {% endvideo %}
         </div>
       </div>
