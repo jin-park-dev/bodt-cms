@@ -3,6 +3,7 @@
 echo "Running sync-server-to-me.sh"
 echo "SERVER (SEB) =======> ME"
 read -p "Are you sure? (y/n) " -n 1 -r
+echo    # (optional) move to a new line
 today=`date '+%Y_%m_%d__%H_%M_%S'`;
 LOCAL_DEV='/Users/jin/Personal/bodt-cms-master'
 if [[ $REPLY =~ ^[Yy]$ ]]
