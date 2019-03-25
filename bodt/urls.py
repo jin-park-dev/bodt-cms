@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.urls import path, re_path, include
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
@@ -8,6 +9,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
 
+from decouple import config, UndefinedValueError
 from puput import urls as puput_urls
 
 
@@ -31,7 +33,7 @@ urlpatterns = [
     #    url(r'^pages/', include(wagtail_urls)),
 ]
 
-
+# Wagtail media config - serving media for dev
 if settings.DEBUG:
     from django.conf.urls.static import static
     from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -40,7 +42,14 @@ if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-    # urlpatterns += static(settings.MEDIA_URL + 'images/', document_root=os.path.join(settings.MEDIA_ROOT, 'images'))
-    # urlpatterns += [
-    #     url(r'^favicon\.ico$', RedirectView.as_view(url=settings.STATIC_URL + 'myapp/images/favicon.ico')),
-    # ]
+# Debug Toolbar
+try:
+    ENV_IS_FOR = config('ENV_IS_FOR')
+    if ENV_IS_FOR == "local":
+        import debug_toolbar
+        urlpatterns = [
+                          path('__debug__/', include(debug_toolbar.urls)),
+
+                      ] + urlpatterns
+except UndefinedValueError:
+    pass
