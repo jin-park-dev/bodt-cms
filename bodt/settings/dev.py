@@ -1,23 +1,27 @@
 from .base import *
+from decouple import config
 
+ENV_IS_FOR = config('ENV_IS_FOR')
 
-DEBUG = True
+if ENV_IS_FOR == 'local':
 
-INSTALLED_APPS += [
-    'django_extensions',
-    'debug_toolbar',
-]
+    DEBUG = True
 
-MIDDLEWARE += [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-    'livereload.middleware.LiveReloadScript',
-]
+    INSTALLED_APPS += [
+        'django_extensions',
+        'debug_toolbar',
+    ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    MIDDLEWARE += [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+        'livereload.middleware.LiveReloadScript',
+    ]
 
-INTERNAL_IPS = ["127.0.0.1", "localhost"]
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
-SECURE_SSL_REDIRECT = False
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
+    INTERNAL_IPS = ["127.0.0.1", "localhost"]
+
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'http')
+    SECURE_SSL_REDIRECT = False
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False

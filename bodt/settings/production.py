@@ -1,6 +1,10 @@
 from .base import *
+from decouple import config
 
-DEBUG = False
+ENV_IS_FOR = config('ENV_IS_FOR')
+
+if ENV_IS_FOR == 'production':
+    DEBUG = False
 
 # try:
 #     from .local import *
