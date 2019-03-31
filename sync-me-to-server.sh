@@ -14,7 +14,7 @@ then
     scp jin@${TARGET}/db.sqlite3 ${LOCAL_DEV}/backup/server/db.sqlite3._${today}
     rsync -av jin@${TARGET}/media ${LOCAL_DEV}/backup/server/
     echo "===============RSYNC============================"
-    rsync -av /Users/jin/Personal/bodt-cms-master/media jin@${TARGET}
+    rsync -av ${LOCAL_DEV}/media jin@${TARGET}
     echo "===============Replacing Database==============="
     scp db.sqlite3 jin@${TARGET}/db.sqlite3
     echo ""
