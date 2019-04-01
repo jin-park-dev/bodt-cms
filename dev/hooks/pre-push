@@ -30,7 +30,8 @@ do
 	echo $1
 	echo $2
 	if [ "develop" == "$branch" ]; then
-		echo "Develop. Jenkins not setup yet."
+		echo "Develop. Sending Jenkins build."
+	curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-develop/build?token=sergreg654e-develop
 	elif [ "master" == "$branch" ]; then
 		echo "Master. Sending Jenkins build"
 	curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-master/build?token=qwerasdfzxcv-master
