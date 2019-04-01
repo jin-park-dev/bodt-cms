@@ -33,7 +33,7 @@ do
 		echo "Develop. Jenkins not setup yet."
 	elif [ "master" == "$branch" ]; then
 		echo "Master. Sending Jenkins build"
-	curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 http://jenkins.jinis.online/job/bodt-cms-master/build?token=qwerasdfzxcv-master
+	curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-master/build?token=qwerasdfzxcv-master
 	fi
 
 done
