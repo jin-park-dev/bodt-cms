@@ -3,8 +3,6 @@
 while read oldrev newrev refname
 do
     branch=$(git rev-parse --symbolic --abbrev-ref $refname)
-	echo $1
-	echo $2
 	if [ "develop" == "$branch" ]; then
 		echo "Develop. Sending Jenkins build."
 	curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-develop/build?token=sergreg654e-develop
