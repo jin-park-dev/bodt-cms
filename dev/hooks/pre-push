@@ -5,10 +5,10 @@ do
     branch=$(git rev-parse --symbolic --abbrev-ref $refname)
 	if [ "develop" == "$branch" ]; then
 		echo "Develop. Sending Jenkins build."
-	curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-develop/build?token=sergreg654e-develop
+	    curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-develop/build?token=sergreg654e-develop
 	elif [ "master" == "$branch" ]; then
 		echo "Master. Sending Jenkins build"
-	curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-master/build?token=qwerasdfzxcv-master
+	    curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-master/build?token=qwerasdfzxcv-master
 	fi
 
 done
