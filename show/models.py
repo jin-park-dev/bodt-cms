@@ -44,7 +44,7 @@ class ShowPage(Page):
 
     content_panels = Page.content_panels + [
         FieldPanel('date'),
-        FieldPanel('title'),
+        FieldPanel('name'),
         FieldPanel('body'),
         FieldPanel('video'),
         InlinePanel('show_images', label="Show images"),

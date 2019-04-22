@@ -67,6 +67,9 @@ INSTALLED_APPS = [
     'django_social_share',
     'puput',
     'colorful',
+    'wagalytics',
+    'wagtailfontawesome',
+
 ]
 
 MIDDLEWARE = [
@@ -182,3 +185,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 PUPUT_AS_PLUGIN = True
 # WAGTAIL_SITE_NAME = 'Puput blog'
+
+
+# Wagtail
+GA_KEY_FILEPATH = '/Users/jin/Apps/wagtail-237316-364e043ba940.json'
+GA_VIEW_ID = 'ga:191694086'
