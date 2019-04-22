@@ -131,18 +131,12 @@
             <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
               {% with news=news.specific %}
                 <a href="{% pageurl news %}">
-                  {#                Old news code just below #}
-                  {#                  {% with news.news_images.first as news_image %}#}
                   <div class="card">
-                    {#                  <div>{{ news.date }}</div>#}
                     {% if news.header_image %}
-                      {#                      {% image news_image.image min-1000x1000 class="card-img-top" %}#}
-                      {#                        {% image news.header_image fill-800x240 as header_image %}#}
                       {% image news.header_image original as header_image %}
                       <div class="img-center-cropped d-flex flex-column-reverse"
                            style="background-image: url('{{ header_image.url }}');">
                         <div class="card-footer home-news-card-footer">
-                          {#                        <a href="{% pageurl news %}">{{ news.title }}</a>#}
                           <div>{{ news.title }}</div>
                         </div>
                       </div>
@@ -150,9 +144,7 @@
                       <div class="img-center-cropped d-flex flex-column-reverse"
                            style="background-image: url('{% static 'css/img/common/image-placeholder-500x500.jpg' %}');">
                         <div class="card-footer home-news-card-footer">
-                          {#                        <a href="{% pageurl news %}">{{ news.title }}</a>#}
                           <div>{{ news.title }}</div>
-                          {#                            <div>{{ news.intro }}</div>#}
                         </div>
                       </div>
                     {% endif %}
@@ -168,7 +160,7 @@
 
   <div class="container-fluid">
     <h2 class="text-center ">
-      What students say
+      What students say (Work in progress)
     </h2>
     <div class="row text-center">
       <div class="col-md-4 col-sm-12">
