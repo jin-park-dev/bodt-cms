@@ -18,15 +18,20 @@ body {
   //font-family: 'Acme', sans-serif; //very chinese advert looking. too strong in a sterotyped style. 1/5
   //font-family: 'Signika', sans-serif; // quite strong looking font
 
-
-
   //font-family: 'Muli', sans-serif;
 
+}
 
-  font-family: 'Hind Guntur', sans-serif;
+h1 {
+  font-family: 'Exo 2', sans-serif;
+}
 
+h2 h3 h4 h5 h6 {
+  font-family: 'Goudy Bookletter 1911', serif;
+}
 
-
+p div a ul ol li span {
+  font-family: 'Signika', sans-serif;
 }
 
 hr {
@@ -144,6 +149,9 @@ hr {
 
 // For page title
 .page-title {
+  //font-family: 'Cabin', sans-serif;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: bold;
   background-color: rgba(193, 193, 193, 0.47);
   //border: 2px solid red;
   border-radius: 10px;
@@ -154,8 +162,6 @@ hr {
   //max-width: 90%;
   //width: 100%;
   //width: inherit;
-  font-family: 'Cabin', sans-serif;
-
 }
 
 //
@@ -220,6 +226,7 @@ hr {
 
 .home-hero-dances-item {
   //align-self: flex-end;
+  font-family: 'Hind Guntur', sans-serif;
   font-size: 50px;
   color: wheat;
   margin-bottom: 50px;

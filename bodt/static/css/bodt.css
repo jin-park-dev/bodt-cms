@@ -1,7 +1,18 @@
 @charset "UTF-8";
 body {
   background: whitesmoke;
-  font-family: "Hind Guntur", sans-serif;
+}
+
+h1 {
+  font-family: "Exo 2", sans-serif;
+}
+
+h2 h3 h4 h5 h6 {
+  font-family: "Goudy Bookletter 1911", serif;
+}
+
+p div a ul ol li span {
+  font-family: "Signika", sans-serif;
 }
 
 hr {
@@ -88,12 +99,13 @@ hr {
 }
 
 .page-title {
+  font-family: "Exo 2", sans-serif;
+  font-weight: bold;
   background-color: rgba(193, 193, 193, 0.47);
   border-radius: 10px;
   color: whitesmoke;
   padding: 1rem;
   font-size: 70px;
-  font-family: "Cabin", sans-serif;
 }
 
 .navbar {
@@ -132,6 +144,7 @@ hr {
 }
 
 .home-hero-dances-item {
+  font-family: "Hind Guntur", sans-serif;
   font-size: 50px;
   color: wheat;
   margin-bottom: 50px;
