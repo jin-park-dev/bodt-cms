@@ -24,7 +24,7 @@ django-widget-tweaks==1.4.2
 djangorestframework==3.8.2
 draftjs-exporter==2.1.5
 Fabric3==1.14.post1
-google-api-python-client==1.5.0
+google-api-python-client
 gunicorn==19.9.0
 html5lib==1.0.1
 httplib2==0.12.1
