@@ -66,7 +66,7 @@ class ShowPage(Page):
         # showpages = Page.objects.get(slug='shows').get_children().live().order_by('-first_published_at')
 
         show_slug = Page.objects.get(slug='shows')
-        print(show_slug)
+        # print(show_slug)
 
         showpages = ShowPage.objects.live().order_by('-date')
 

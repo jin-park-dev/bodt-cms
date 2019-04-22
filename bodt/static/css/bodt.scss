@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-  font-family: 'Exo 2', sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
 
 h2 h3 h4 h5 h6 {
@@ -149,9 +149,10 @@ hr {
 
 // For page title
 .page-title {
-  //font-family: 'Cabin', sans-serif;
-  font-family: 'Exo 2', sans-serif;
-  font-weight: bold;
+  font-family: 'Cabin', sans-serif;
+  //font-family: 'Exo 2', sans-serif; // Nooo! horrible. Very far cry blood dragon style
+  //font-weight: bold;
+
   background-color: rgba(193, 193, 193, 0.47);
   //border: 2px solid red;
   border-radius: 10px;

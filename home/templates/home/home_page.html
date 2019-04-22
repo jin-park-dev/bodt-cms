@@ -11,15 +11,15 @@
   {#  </div>#}
 
   <div class="home-hero">
-    <div class="home-hero-dances home-hero--salsa">
+    <div class="home-hero-dances home-hero--salsa animated pulse" data-aos="zoom-out" data-aos-delay="50">
       <div class="home-hero-dances-item">Salsa</div>
       <div class="line"></div>
     </div>
-    <div class="home-hero-dances home-hero--bachata">
+    <div class="home-hero-dances home-hero--bachata" data-aos="zoom-out" data-aos-delay="250">
       <div class="home-hero-dances-item">Bachata</div>
       <div class="line"></div>
     </div>
-    <div class="home-hero-dances home-hero--zouk">
+    <div class="home-hero-dances home-hero--zouk" data-aos="zoom-out" data-aos-delay="450">
       <div class="home-hero-dances-item">Zouk</div>
       <div class="line"></div>
     </div>
@@ -131,7 +131,7 @@
             <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
               {% with news=news.specific %}
                 <a href="{% pageurl news %}">
-                  <div class="card">
+                  <div class="card" data-aos="fade-right">
                     {% if news.header_image %}
                       {% image news.header_image original as header_image %}
                       <div class="img-center-cropped d-flex flex-column-reverse"
@@ -163,19 +163,19 @@
       <span>&#8220;</span> What students say (Work in progress) <span>&#8220;</span>
     </h2>
     <div class="row text-center">
-      <div class="col-md-4 col-sm-12">
+      <div class="col-md-4 col-sm-12" data-aos="fade-right">
         <div>
           <img class="img-fluid image center-cropped rounded mb-2" src="{% static 'img/home/bodt-eg-1-emily-sea-198689-unsplash.jpg' %}" style="height: 275px; max-width: 240px;">
           <blockquote style="font-style: italic; font-size: 1.3em;">“If you would convince a man that he does wrong, do right. But do not care to convince him. Men will believe what they see. Let them see.”</blockquote>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12">
+      <div class="col-md-4 col-sm-12" data-aos="fade-up">
         <div>
           <img class="img-fluid image center-cropped rounded mb-2" src="{% static 'img/home/bodt-eg-2-jon-ly-546498-unsplash.jpg' %}" style="height: 275px; max-width: 240px;">
           <blockquote style="font-style: italic; font-size: 1.3em;">“I would rather be an artist than a leader. Ironically, a leader has to follow the rules.”</blockquote>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12">
+      <div class="col-md-4 col-sm-12" data-aos="fade-left">
         <div>
           <img class="img-fluid image center-cropped rounded mb-2" src="{% static 'img/home/bodt-eg-3-stefan.jpg' %}" style="height: 275px; max-width: 240px;">
           <blockquote style="font-style: italic; font-size: 1.3em;">“It is not until you change your identity to match your life blueprint that you will understand why everything in the past never worked.”</blockquote>
@@ -204,7 +204,7 @@
             <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
               {% with event=event.specific %}
                 <div class="">
-                  <div class="card">
+                  <div class="card" data-aos="fade-left">
                     {% with event.event_images.first as event_image %}
                       {% if event_image %}
                         <a href="{% pageurl event %}">
@@ -248,7 +248,7 @@
             <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
               {% with show=show.specific %}
                 <div class="">
-                  <div class="card">
+                  <div class="card" data-aos="fade-right">
                     {% with show.show_images.first as show_image %}
                       {% if show_image %}
                         <a href="{% pageurl show %}">

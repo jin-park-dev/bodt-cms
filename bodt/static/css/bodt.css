@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  font-family: "Exo 2", sans-serif;
+  font-family: "Cabin", sans-serif;
 }
 
 h2 h3 h4 h5 h6 {
@@ -99,8 +99,7 @@ hr {
 }
 
 .page-title {
-  font-family: "Exo 2", sans-serif;
-  font-weight: bold;
+  font-family: "Cabin", sans-serif;
   background-color: rgba(193, 193, 193, 0.47);
   border-radius: 10px;
   color: whitesmoke;
