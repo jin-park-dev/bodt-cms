@@ -39,7 +39,7 @@ class HomePage(Page):
         # print('BlogPage')
         # print(BlogPage)
         # newspages = BlogPage.objects.live().order_by('-first_published_at')[0:3]
-        newspages = EntryPage.objects.live().order_by('-date')[0:3] # Latest 3
+        newspages = EntryPage.objects.live().order_by('-date')[0:3]  # Latest 3
         # print('blogpage')
         # print(blogpage)
 
@@ -54,8 +54,9 @@ class HomePage(Page):
         peoplepages = PeoplePage.objects.live().order_by('?')[0:8]
         context['peoplepages'] = peoplepages
 
+        # Same as news. Take 3 latest and make order from oldest to newest.
         showpages = ShowPage.objects.live().order_by('-first_published_at')[0:3]
-        context['showpages'] = showpages
+        context['showpages'] = reversed(showpages)
 
         return context
 
