@@ -585,5 +585,10 @@ show-main-item-menu-v2-lightbox {
     flex-direction: column;
   }
 }
+@media only screen and (max-width: 576px) {
+  .page-title {
+    font-size: 48px;
+  }
+}
 
 /*# sourceMappingURL=bodt.css.map */

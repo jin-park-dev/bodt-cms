@@ -163,6 +163,7 @@ hr {
   //max-width: 90%;
   //width: 100%;
   //width: inherit;
+  //word-wrap: break-word;
 }
 
 //
@@ -844,5 +845,11 @@ show-main-item-menu-v2-lightbox {
 
   .home-hero {
     flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .page-title {
+    font-size: 48px;
   }
 }
