@@ -147,6 +147,11 @@ hr {
   min-width: 0
 }
 
+//.nav-item {
+//  padding-right: 0.5rem !important;
+//  padding-left: 0.5rem !important;
+//}
+
 // For page title
 .page-title {
   font-family: 'Cabin', sans-serif;
@@ -850,7 +855,12 @@ show-main-item-menu-v2-lightbox {
 }
 
 @media only screen and (max-width: 576px) {
+  .nav-active {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
   .page-title {
     font-size: 48px;
   }
+
 }
