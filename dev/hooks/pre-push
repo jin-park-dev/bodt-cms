@@ -9,6 +9,9 @@ do
 	elif [ "master" == "$branch" ]; then
 		echo "Master. Sending Jenkins build"
 	    curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-master/build?token=qwerasdfzxcv-master
+	elif [ "live" == "$branch" ]; then
+		echo "Live. Sending Jenkins build"
+	    curl -u jin:11cf2ecf36c8458239763fb4d6644110e8 https://jenkins.jinis.online/job/bodt-cms-live/build?token=GHHnETku_wEiaDR4yFz7GGgthRPPa7wyTt0IQXRBScU=-live
 	fi
 
 done
