@@ -52,6 +52,7 @@ class HomePage(Page):
 
         # peoplepages = PeoplePage.objects.live().order_by('-first_published_at')[0:8]
         # peoplepages = PeoplePage.objects.live().order_by('?')[0:8]
+        # On purpose made it so it can show past members.
         peoplepages = PeoplePage.objects.live().filter(featured=True).order_by('ordering_priority')[0:8]
         context['peoplepages'] = peoplepages
 
