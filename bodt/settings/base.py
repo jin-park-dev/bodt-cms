@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from wagtail.embeds.oembed_providers import youtube, vimeo, all_providers
+
 from decouple import config, Csv, UndefinedValueError
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -173,11 +175,19 @@ MEDIA_URL = '/media/'
 
 # Wagtail settings
 
+WAGTAILEMBEDS_FINDERS = [
+    {
+        'class': 'wagtail.embeds.finders.oembed',
+        'providers': all_providers,
+        # 'providers': [youtube, vimeo], # all_providers
+    }
+]
+
 WAGTAIL_SITE_NAME = "bodt"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'https://bodt.jinis.online'
+BASE_URL = 'https://www.bachatacambridge.com'
 
 
 # Crispy form
