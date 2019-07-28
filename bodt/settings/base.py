@@ -221,3 +221,7 @@ PUPUT_AS_PLUGIN = True
 # Wagtail
 GA_KEY_FILEPATH = '/Users/jin/Apps/wagtail-237316-364e043ba940.json'
 GA_VIEW_ID = 'ga:191694086'
+
+
+# Temp
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
