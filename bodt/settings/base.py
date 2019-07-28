@@ -155,9 +155,11 @@ LOGGING = {
             'handlers': ['console'],
         },
     },
-    'root': {'level': 'INFO'},
+    'root': {
+        'level': 'DEBUG',
+        'handlers': ['console']
+    },
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
