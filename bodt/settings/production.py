@@ -5,3 +5,4 @@ ENV_IS_FOR = config('ENV_IS_FOR')
 
 if ENV_IS_FOR == 'production':
     DEBUG = False
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
