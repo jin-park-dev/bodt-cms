@@ -52,7 +52,7 @@ class HomePage(Page):
 
         # peoplepages = PeoplePage.objects.live().order_by('-first_published_at')[0:8]
         # peoplepages = PeoplePage.objects.live().order_by('?')[0:8]
-        # On purpose made it so it can show past members.
+        # On purpose made it so it can show alumni members.
         peoplepages = PeoplePage.objects.live().filter(featured=True).order_by('ordering_priority')[0:8]
         context['peoplepages'] = peoplepages
 
@@ -103,7 +103,7 @@ class PeoplePage(Page):
     name = models.CharField(max_length=60, blank=True)
     description = RichTextField()
     featured = models.BooleanField(default=False, help_text='Shows on the homepage')
-    past = models.BooleanField(default=False)
+    alumni = models.BooleanField(default=False)
     ordering_priority = models.IntegerField(blank=True, null=True, default=5,
                                             # validators=[MaxValueValidator(10), MinValueValidator(1)],
                                             choices=[(i,i) for i in range(1, 11)],
@@ -117,7 +117,7 @@ class PeoplePage(Page):
             FieldRowPanel([
                 FieldPanel('featured', classname="col4"),
                 FieldPanel('ordering_priority', classname="col4"),
-                FieldPanel('past', classname="col4")
+                FieldPanel('alumni', classname="col4")
             ]),
         ], heading='Helpful Ordering'),
     ]
