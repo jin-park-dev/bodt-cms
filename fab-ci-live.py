@@ -19,6 +19,7 @@ def deploy():
         _update_static_files()
         _update_database()
         _restart_gunicorn()
+    print("Don't forgot to add SENDGRIND_API_ID and GA wagtail .json for google analytics")
 
 
 def _get_latest_source():
