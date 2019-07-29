@@ -566,6 +566,22 @@ show-main-item-menu-v2-lightbox {
   transform: translate(-50%, -50%);
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.full-width {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+
 .contact-hero > h1,
 .home-hero > h1,
 .news-hero > h1,

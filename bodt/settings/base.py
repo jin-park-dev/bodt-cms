@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from wagtail.embeds.oembed_providers import youtube, vimeo, all_providers
+
 from decouple import config, Csv, UndefinedValueError
 
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -137,6 +139,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Loggin
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+        },
+    },
+    'root': {
+        'level': 'DEBUG',
+        'handlers': ['console']
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -173,11 +196,19 @@ MEDIA_URL = '/media/'
 
 # Wagtail settings
 
+WAGTAILEMBEDS_FINDERS = [
+    {
+        'class': 'wagtail.embeds.finders.oembed',
+        'providers': all_providers,
+        # 'providers': [youtube, vimeo], # all_providers
+    }
+]
+
 WAGTAIL_SITE_NAME = "bodt"
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'https://bodt.jinis.online'
+# BASE_URL = 'https://www.bachatacambridge.com'
 
 
 # Crispy form
@@ -187,6 +218,39 @@ PUPUT_AS_PLUGIN = True
 # WAGTAIL_SITE_NAME = 'Puput blog'
 
 
-# Wagtail
-GA_KEY_FILEPATH = '/Users/jin/Apps/wagtail-237316-364e043ba940.json'
+# Wagtail TODO: Put this is dev vs production?
 GA_VIEW_ID = 'ga:191694086'
+
+# Sendgrid
+# https://simpleit.rocks/python/django/adding-email-to-django-the-easiest-way/
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+
+SENDGRID_API_KEY = config('SENDGRIND_API_PASS')
+
+# Old SMTP attempt.
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = config('SENDGRIND_API_ID')
+# EMAIL_HOST_PASSWORD = config('SENDGRIND_API_PASS')
+# EMAIL_HOST_USER = 'jinpark.han@gmail.com'
+# EMAIL_HOST_PASSWORD = config('SENDGRIND_API_ID')
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+
+
+ENV_IS_FOR = config('ENV_IS_FOR')
+print('ENV_IS_FOR')
+print(ENV_IS_FOR)
+
+if ENV_IS_FOR == 'production':
+    DEBUG = False
+    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+    SENDGRID_SANDBOX_MODE_IN_DEBUG=False
+    SENDGRID_ECHO_TO_STDOUT=True
+
+    GA_KEY_FILEPATH = 'wagtail-237316-364e043ba940.json'
+    GA_VIEW_ID = 'ga:191694086'

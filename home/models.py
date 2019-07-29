@@ -47,15 +47,17 @@ class HomePage(Page):
         # print(newspages.first().__dict__)
         context['newspages'] = reversed(newspages) # To get order from last to newest (on the right)
 
-        eventpages = EventPage.objects.live().order_by('-first_published_at')[0:3]
+        eventpages = EventPage.objects.live().order_by('-date_post')[0:3]
         context['eventpages'] = eventpages
 
         # peoplepages = PeoplePage.objects.live().order_by('-first_published_at')[0:8]
-        peoplepages = PeoplePage.objects.live().order_by('?')[0:8]
+        # peoplepages = PeoplePage.objects.live().order_by('?')[0:8]
+        # On purpose made it so it can show alumni members.
+        peoplepages = PeoplePage.objects.live().filter(featured=True).order_by('ordering_priority')[0:8]
         context['peoplepages'] = peoplepages
 
         # Same as news. Take 3 latest and make order from oldest to newest.
-        showpages = ShowPage.objects.live().order_by('-first_published_at')[0:3]
+        showpages = ShowPage.objects.live().order_by('-date')[0:3]
         context['showpages'] = reversed(showpages)
 
         return context
@@ -90,7 +92,8 @@ class PeopleIndexPage(Page):
     def get_context(self, request):
         # Update context to include only active member, ordered by newest
         context = super().get_context(request)
-        peoplepages = self.get_children().live().order_by('-first_published_at')
+        # peoplepages = self.get_children().live().order_by('-first_published_at')
+        peoplepages = PeoplePage.objects.live().order_by('ordering_priority')
         context['peoplepages'] = peoplepages
         return context
 
@@ -99,11 +102,24 @@ class PeoplePage(Page):
 
     name = models.CharField(max_length=60, blank=True)
     description = RichTextField()
+    featured = models.BooleanField(default=False, help_text='Shows on the homepage')
+    alumni = models.BooleanField(default=False)
+    ordering_priority = models.IntegerField(blank=True, null=True, default=5,
+                                            # validators=[MaxValueValidator(10), MinValueValidator(1)],
+                                            choices=[(i,i) for i in range(1, 11)],
+                                            ) # Between 1-10?
 
     content_panels = Page.content_panels + [
         FieldPanel('name'),
         FieldPanel('description', classname="full"),
         InlinePanel('people_images', label="People images"),
+        MultiFieldPanel([
+            FieldRowPanel([
+                FieldPanel('featured', classname="col4"),
+                FieldPanel('ordering_priority', classname="col4"),
+                FieldPanel('alumni', classname="col4")
+            ]),
+        ], heading='Helpful Ordering'),
     ]
 
     def __str__(self):

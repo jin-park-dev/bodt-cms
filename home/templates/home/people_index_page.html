@@ -56,27 +56,61 @@
 {#  {% endfor %}#}
 {#  </div>#}
 
-  <section class="gallery-block compact-gallery">
+  <h1 class="my-3 text-center">Current Team Members</h1>
+
+  <div class="gallery-block compact-gallery">
     <div class="row no-gutters">
       {% for people in peoplepages %}
         {% with people=people.specific %}
-          {% with people.people_images.first as people_image %}
-            {% if people_image %}
-              {% image people_image.image original as tmp_image %}
-              <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
-                <a class="lightbox" href="{% pageurl people %}">
-                  <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}" style="max-height: 300px">
-                  <span class="description">
+          {% if not people.past %}
+            {% with people.people_images.first as people_image %}
+              {% if people_image %}
+                {% image people_image.image original as tmp_image %}
+                <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
+                  <a class="lightbox" href="{% pageurl people %}">
+                    <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}" style="max-height: 300px">
+                    <span class="description">
                             <span class="description-heading">{{ people.title }}</span>
                             <span class="description-body">{{ people.description|richtext|truncatewords_html:40 }}</span>
                   </span>
-                </a>
-              </div>
-            {% endif %}
-          {% endwith %}
+                  </a>
+                </div>
+              {% endif %}
+            {% endwith %}
+          {% endif %}
         {% endwith %}
       {% endfor %}
     </div>
-  </section>
+  </div>
+
+
+
+  <h1 class="my-3 text-center">Team Alumni</h1>
+
+  <div class="gallery-block compact-gallery">
+    <div class="row no-gutters">
+      {% for people in peoplepages %}
+        {% with people=people.specific %}
+          {% if people.past %}
+            {% with people.people_images.first as people_image %}
+              {% if people_image %}
+                {% image people_image.image original as tmp_image %}
+                <div class="col-md-6 col-lg-3 col-sm-6 item zoom-on-hover">
+                  <a class="lightbox" href="{% pageurl people %}">
+                    <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}" style="max-height: 300px">
+                    <span class="description">
+                            <span class="description-heading">{{ people.title }}</span>
+                            <span class="description-body">{{ people.description|richtext|truncatewords_html:40 }}</span>
+                  </span>
+                  </a>
+                </div>
+              {% endif %}
+            {% endwith %}
+          {% endif %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+  </div>
+
 
 {% endblock %}
