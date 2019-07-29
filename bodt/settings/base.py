@@ -219,8 +219,6 @@ PUPUT_AS_PLUGIN = True
 
 
 # Wagtail TODO: Put this is dev vs production?
-GA_KEY_FILEPATH = '/Users/jin/Apps/wagtail-237316-364e043ba940.json'
-GA_VIEW_ID = 'ga:191694086'
 
 
 # Sendgrid
