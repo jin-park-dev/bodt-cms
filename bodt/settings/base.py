@@ -242,6 +242,8 @@ SENDGRID_API_KEY = config('SENDGRIND_API_PASS')
 
 
 ENV_IS_FOR = config('ENV_IS_FOR')
+print('ENV_IS_FOR')
+print(ENV_IS_FOR)
 
 if ENV_IS_FOR == 'production':
     DEBUG = False

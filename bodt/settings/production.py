@@ -1,7 +1,10 @@
 # from .base import *
-# from decouple import config
-#
-# ENV_IS_FOR = config('ENV_IS_FOR')
+from decouple import config
+
+ENV_IS_FOR = config('ENV_IS_FOR')
+
+print('ENV_IS_FOR in production.py')
+print(ENV_IS_FOR)
 #
 # if ENV_IS_FOR == 'production':
 #     DEBUG = False
