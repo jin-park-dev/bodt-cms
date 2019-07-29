@@ -230,6 +230,7 @@ EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
 
 SENDGRID_API_KEY = config('SENDGRIND_API_PASS')
 
+# Old SMTP attempt.
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # EMAIL_HOST = 'smtp.sendgrid.net'
