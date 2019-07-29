@@ -219,7 +219,7 @@ PUPUT_AS_PLUGIN = True
 
 
 # Wagtail TODO: Put this is dev vs production?
-
+GA_VIEW_ID = 'ga:191694086'
 
 # Sendgrid
 # https://simpleit.rocks/python/django/adding-email-to-django-the-easiest-way/
