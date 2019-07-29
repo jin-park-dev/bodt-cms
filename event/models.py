@@ -21,7 +21,8 @@ class EventIndexPage(Page):
     def get_context(self, request):
         # Update context to include only active event, ordered by newest
         context = super().get_context(request)
-        eventpages = self.get_children().live().order_by('-date_post')
+        # eventpages = self.get_children().live().order_by('-date_post')
+        eventpages = EventPage.objects.live().order_by('-date_post')
         context['eventpages'] = eventpages
         return context
 
