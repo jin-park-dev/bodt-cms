@@ -25,7 +25,7 @@ class NewsIndexPage(Page):
     def get_context(self, request):
         # Update context to include only active member, ordered by newest
         context = super().get_context(request)
-        newspages = self.get_children().live().order_by('-first_published_at')
+        newspages = self.get_children().live().order_by('-date')
         context['newspages'] = newspages
         return context
 

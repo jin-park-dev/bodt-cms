@@ -47,7 +47,7 @@ class HomePage(Page):
         # print(newspages.first().__dict__)
         context['newspages'] = reversed(newspages) # To get order from last to newest (on the right)
 
-        eventpages = EventPage.objects.live().order_by('-first_published_at')[0:3]
+        eventpages = EventPage.objects.live().order_by('-date_post')[0:3]
         context['eventpages'] = eventpages
 
         # peoplepages = PeoplePage.objects.live().order_by('-first_published_at')[0:8]
@@ -57,7 +57,7 @@ class HomePage(Page):
         context['peoplepages'] = peoplepages
 
         # Same as news. Take 3 latest and make order from oldest to newest.
-        showpages = ShowPage.objects.live().order_by('-first_published_at')[0:3]
+        showpages = ShowPage.objects.live().order_by('-date')[0:3]
         context['showpages'] = reversed(showpages)
 
         return context
@@ -92,7 +92,8 @@ class PeopleIndexPage(Page):
     def get_context(self, request):
         # Update context to include only active member, ordered by newest
         context = super().get_context(request)
-        peoplepages = self.get_children().live().order_by('-first_published_at')
+        # peoplepages = self.get_children().live().order_by('-first_published_at')
+        peoplepages = PeoplePage.objects.live().order_by('ordering_priority')
         context['peoplepages'] = peoplepages
         return context
 
