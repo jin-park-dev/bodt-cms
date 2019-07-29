@@ -218,10 +218,24 @@ PUPUT_AS_PLUGIN = True
 # WAGTAIL_SITE_NAME = 'Puput blog'
 
 
-# Wagtail
+# Wagtail TODO: Put this is dev vs production?
 GA_KEY_FILEPATH = '/Users/jin/Apps/wagtail-237316-364e043ba940.json'
 GA_VIEW_ID = 'ga:191694086'
 
 
-# Temp
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Sendgrid
+# https://simpleit.rocks/python/django/adding-email-to-django-the-easiest-way/
+
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+
+SENDGRID_API_KEY = config('SENDGRIND_API_PASS')
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = config('SENDGRIND_API_ID')
+# EMAIL_HOST_PASSWORD = config('SENDGRIND_API_PASS')
+# EMAIL_HOST_USER = 'jinpark.han@gmail.com'
+# EMAIL_HOST_PASSWORD = config('SENDGRIND_API_ID')
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True

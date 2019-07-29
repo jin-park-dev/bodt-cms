@@ -17,7 +17,7 @@ if ENV_IS_FOR == 'local':
         'livereload.middleware.LiveReloadScript',
     ]
 
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
     INTERNAL_IPS = ["127.0.0.1", "localhost"]
 
@@ -25,3 +25,6 @@ if ENV_IS_FOR == 'local':
     SECURE_SSL_REDIRECT = False
     SESSION_COOKIE_SECURE = False
     CSRF_COOKIE_SECURE = False
+
+    SENDGRID_SANDBOX_MODE_IN_DEBUG=True
+    SENDGRID_ECHO_TO_STDOUT=True
