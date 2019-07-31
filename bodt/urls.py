@@ -1,3 +1,4 @@
+import django
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
@@ -13,7 +14,14 @@ from decouple import config, UndefinedValueError
 from puput import urls as puput_urls
 
 
+def custom_page_not_found(request):
+    return django.views.defaults.page_not_found(request, None)
+
+
 urlpatterns = [
+    path("500/", django.views.defaults.server_error),
+    path("404/", custom_page_not_found),
+
     url(r'^django-admin/', admin.site.urls),
 
     url(r'^admin/', include(wagtailadmin_urls)),
