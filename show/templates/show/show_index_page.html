@@ -11,7 +11,7 @@
 {#  </div>#}
 
   <div class="hero-fit">
-    <img src="{% static "css/img/show-hero.png" %}" class="img-hero-cover-fit"/>
+    <img src="{% static "css/img/show-hero.png" %}" class="img-hero-cover-fit" alt="Hero show"/>
     <div class="centered page-title">Bachata Obsesión's choreographs</div>
   </div>
 
@@ -39,7 +39,7 @@
                     <div class="item item-show zoom-on-hover ">
                     <a class="lightbox" href="{% pageurl show %}">
                       {% if main_image %}
-                        <img class="img-fluid image" src="{{ tmp_image.url }}">
+                        <img class="img-fluid image" src="{{ tmp_image.url }}" alt="Lightbox show">
                       {% endif %}
                     </a>
                     </div>

@@ -69,42 +69,42 @@
       <div class="row no-gutters">
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-1.jpg" %}">
-            <img class="img-fluid image" src="{% static "img/home/home-g-1.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-1.jpg" %}" alt="Lightbox pic 1">
           </a>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-2.jpg" %}">
-            <img class="img-fluid image " src="{% static "img/home/home-g-2.jpg" %}">
+            <img class="img-fluid image " src="{% static "img/home/home-g-2.jpg" %}" alt="Lightbox pic 2">
           </a>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-3.jpg" %}">
-            <img class="img-fluid image" src="{% static "img/home/home-g-3.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-3.jpg" %}" alt="Lightbox pic 3">
           </a>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-4.jpg" %}">
-            <img class="img-fluid image" src="{% static "img/home/home-g-4.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-4.jpg" %}" alt="Lightbox pic 4">
           </a>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-5.jpg" %}">
-            <img class="img-fluid image" src="{% static "img/home/home-g-5.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-5.jpg" %}" alt="Lightbox pic 5">
           </a>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-6.jpg" %}">
-            <img class="img-fluid image" src="{% static "img/home/home-g-6.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-6.jpg" %}" alt="Lightbox pic 6">
           </a>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-7.jpg" %}">
-            <img class="img-fluid image" src="{% static "img/home/home-g-7.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-7.jpg" %}" alt="Lightbox pic 7">
           </a>
         </div>
         <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
           <a class="lightbox" href="{% static "img/home/home-g-8.jpg" %}">
-            <img class="img-fluid image" src="{% static "img/home/home-g-8.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-8.jpg" %}" alt="Lightbox pic 8">
           </a>
         </div>
       </div>
@@ -167,7 +167,8 @@
         <div>
           <img class="img-fluid image center-cropped rounded mb-2"
                src="{% static 'img/home/bodt-eg-1-emily-sea-198689-unsplash.jpg' %}"
-               style="height: 275px; max-width: 240px;">
+               style="height: 275px; max-width: 240px;"
+               alt="Person 1">
           <blockquote style="font-style: italic; font-size: 1.3em;">“Everything changes when I dance... I am a taskmaster there. I am the creator. I am high on dance - my expression, body language... I am like a fire.”
           </blockquote>
         </div>
@@ -176,7 +177,8 @@
         <div>
           <img class="img-fluid image center-cropped rounded mb-2"
                src="{% static 'img/home/bodt-eg-2-jon-ly-546498-unsplash.jpg' %}"
-               style="height: 275px; max-width: 240px;">
+               style="height: 275px; max-width: 240px;"
+               alt="Person 2">
           <blockquote style="font-style: italic; font-size: 1.3em;">“Dance has always been the center of who I am. It has given me the inspiration to help other people find a hobby, passion, and activity that fulfills them. It also taught me some of the many skills I need as an entrepreneur: a hard work ethic that takes practice to master and the confidence to persevere through any challenges.”
           </blockquote>
         </div>
@@ -184,7 +186,8 @@
       <div class="col-md-4 col-sm-12" data-aos="fade-left">
         <div>
           <img class="img-fluid image center-cropped rounded mb-2" src="{% static 'img/home/bodt-eg-3-stefan.jpg' %}"
-               style="height: 275px; max-width: 240px;">
+               style="height: 275px; max-width: 240px;"
+               alt="Person 3">
           <blockquote style="font-style: italic; font-size: 1.3em;">“I see dance being used as communication between body and soul, to express what it too deep to find for words.”
           </blockquote>
         </div>
@@ -299,7 +302,7 @@
                 {% image people_image.image original as tmp_image %}
                 <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
                   <a class="lightbox" href="{% pageurl people %}">
-                    <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}" style="max-height: 275px">
+                    <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}" style="max-height: 275px" alt="Person">
                     <span class="description">
                             <span class="description-heading">{{ people.title }}</span>
                             <span class="description-body"></span>
