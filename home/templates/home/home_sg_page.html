@@ -1,0 +1,320 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block body_class %}
+{% endblock %}
+
+{% block content %}
+  {#  <div class="home-hero">#}
+  {#    <h1 class="">Bachata Obsesión Dance Team</h1>#}
+  {#  </div>#}
+
+  <h1>Home SG Page</h1>
+  <div class="home-hero" style="overflow-x: hidden">
+    <div class="home-hero-dances home-hero--salsa animated pulse" data-aos="zoom-out" data-aos-delay="50">
+      <div class="home-hero-dances-item">Salsa</div>
+      <div class="line"></div>
+    </div>
+    <div class="home-hero-dances home-hero--bachata" data-aos="zoom-out" data-aos-delay="250">
+      <div class="home-hero-dances-item">Bachata</div>
+      <div class="line"></div>
+    </div>
+    <div class="home-hero-dances home-hero--zouk" data-aos="zoom-out" data-aos-delay="450">
+      <div class="home-hero-dances-item">Zouk</div>
+      <div class="line"></div>
+    </div>
+  </div>
+
+  {#  <div class="home-hero">#}
+  {#    <div class="home-hero-dances">#}
+  {#      <img src="{% static "css/img/home/salsa cover.jpg" %}" class="img-hero-cover-fit home-hero--salsa"/>#}
+  {##}
+  {#      <div class="home-hero-dances-item">Salsa</div>#}
+  {#      <div class="line"></div>#}
+  {#    </div>#}
+  {#    <div class="home-hero-dances home-hero--bachata">#}
+  {#      <div class="home-hero-dances-item">Bachata</div>#}
+  {#      <div class="line"></div>#}
+  {#    </div>#}
+  {#    <div class="home-hero-dances home-hero--zouk">#}
+  {#      <div class="home-hero-dances-item">Zouk</div>#}
+  {#      <div class="line"></div>#}
+  {#    </div>#}
+  {#  </div>#}
+
+  <div class="home-section-body">
+    {{ page.body|richtext }}
+  </div>
+
+  {#  <div class="container-fluid">#}
+  {#    <div class="row">#}
+  {#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-1.jpg" %}"></div>#}
+  {#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-2.jpg" %}"></div>#}
+  {#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-3.jpg" %}"></div>#}
+  {#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-4.jpg" %}"></div>#}
+  {#    </div>#}
+  {#    <div class="row">#}
+  {#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-5.jpg" %}"></div>#}
+  {#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-6.jpg" %}"></div>#}
+  {#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-7.jpg" %}"></div>#}
+  {#      <div class="col-3"><img class="img-fluid " src="{% static "img/home/home-g-8.jpg" %}"></div>#}
+  {#    </div>#}
+  {#  </div>#}
+
+  <section class="gallery-block compact-gallery">
+    <div class="">
+      {#      <div class="heading">#}
+      {#        <h2></h2>#}
+      {#      </div>#}
+      <div class="row no-gutters">
+        <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-1.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-1.jpg" %}" alt="Lightbox pic 1">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-2.jpg" %}">
+            <img class="img-fluid image " src="{% static "img/home/home-g-2.jpg" %}" alt="Lightbox pic 2">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-3.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-3.jpg" %}" alt="Lightbox pic 3">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-4.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-4.jpg" %}" alt="Lightbox pic 4">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-5.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-5.jpg" %}" alt="Lightbox pic 5">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-6.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-6.jpg" %}" alt="Lightbox pic 6">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-7.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-7.jpg" %}" alt="Lightbox pic 7">
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+          <a class="lightbox" href="{% static "img/home/home-g-8.jpg" %}">
+            <img class="img-fluid image" src="{% static "img/home/home-g-8.jpg" %}" alt="Lightbox pic 8">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+  <script>
+      baguetteBox.run('.compact-gallery', {animation: 'slideIn'});
+  </script>
+
+  <div class="home-section-news">
+    <div class="h1-animation-wrapper mb-3">
+      <div class="h1-animation">
+        <a href="/news">
+          News
+          <span class="link__arrow"></span>
+        </a>
+      </div>
+    </div>
+    <div class="row row-fix">
+      <div class="home-news-container-new col-md-10">
+        <div class="row row-fix" style="overflow-x: hidden">
+          {% for news in newspages %}
+            <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
+              {% with news=news.specific %}
+                <a href="{% pageurl news %}">
+                  <div class="card" data-aos="fade-right">
+                    {% if news.header_image %}
+                      {% image news.header_image original as header_image %}
+                      <div class="img-center-cropped d-flex flex-column-reverse"
+                           style="background-image: url('{{ header_image.url }}');">
+                        <div class="card-footer home-news-card-footer">
+                          <div>{{ news.title }}</div>
+                        </div>
+                      </div>
+                    {% else %}
+                      <div class="img-center-cropped d-flex flex-column-reverse"
+                           style="background-image: url('{% static 'css/img/common/image-placeholder-500x500.jpg' %}');">
+                        <div class="card-footer home-news-card-footer">
+                          <div>{{ news.title }}</div>
+                        </div>
+                      </div>
+                    {% endif %}
+                  </div>
+                </a>
+              {% endwith %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid my-3">
+    <h2 class="text-center mb-3">
+      <span>&#8220;</span> What students say <span>&#8220;</span>
+    </h2>
+    <div class="row text-center" style="overflow-x: hidden">
+      <div class="col-md-4 col-sm-12" data-aos="fade-right">
+        <div>
+          <img class="img-fluid image center-cropped rounded mb-2"
+               src="{% static 'img/home/bodt-eg-1-emily-sea-198689-unsplash.jpg' %}"
+               style="height: 275px; max-width: 240px;"
+               alt="Person 1">
+          <blockquote style="font-style: italic; font-size: 1.3em;">“Everything changes when I dance... I am a taskmaster there. I am the creator. I am high on dance - my expression, body language... I am like a fire.”
+          </blockquote>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12" data-aos="fade-up">
+        <div>
+          <img class="img-fluid image center-cropped rounded mb-2"
+               src="{% static 'img/home/bodt-eg-2-jon-ly-546498-unsplash.jpg' %}"
+               style="height: 275px; max-width: 240px;"
+               alt="Person 2">
+          <blockquote style="font-style: italic; font-size: 1.3em;">“Dance has always been the center of who I am. It has given me the inspiration to help other people find a hobby, passion, and activity that fulfills them. It also taught me some of the many skills I need as an entrepreneur: a hard work ethic that takes practice to master and the confidence to persevere through any challenges.”
+          </blockquote>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-12" data-aos="fade-left">
+        <div>
+          <img class="img-fluid image center-cropped rounded mb-2" src="{% static 'img/home/bodt-eg-3-stefan.jpg' %}"
+               style="height: 275px; max-width: 240px;"
+               alt="Person 3">
+          <blockquote style="font-style: italic; font-size: 1.3em;">“I see dance being used as communication between body and soul, to express what it too deep to find for words.”
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-section-events">
+    <div class="h1-animation-wrapper mb-3">
+      <div class="h1-animation">
+        <a href="/events">
+          Events, Lessons and Social
+          <span class="link__arrow"></span>
+        </a>
+      </div>
+    </div>
+    {#  <div class="d-flex justify-content-between">#}
+    <div class="container-fluid no-gutters">
+      <div class="row row-fix">
+        <div class="col-md-2"></div>
+        <div class="home-news-container-new-reversed col-md-10">
+          <div class="row row-fix">
+            {#          <div class="offset-lg-3 offset-md-0 "></div>#}
+            {% for event in eventpages %}
+              {#        <div class="home-news-container-item mr-5">#}
+              <div class="col-sm-12 col-md-4 mt-1 home-news-container-item" style="overflow-x: hidden">
+                {% with event=event.specific %}
+                  <div class="">
+                    <div class="card" data-aos="fade-left">
+                      {% with event.event_images.first as event_image %}
+                        {% if event_image %}
+                          <a href="{% pageurl event %}">
+                            {% image event_image.image original as tmp_image %}
+                            <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                          </a>
+                        {% endif %}
+                      {% endwith %}
+                      {#                  <div class="card-body">{{ event.body|richtext|truncatewords_html:40 }}</div>#}
+                      {#                  <div class="text-truncate">{{ event.title }}</div>#}
+                      <div class="card-footer home-news-event-card-header d-flex flex-column justify-content-center">
+                        <div class="align-middle">
+                          <a class="" href="{% pageurl event %}">
+                            {{ event.title }}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endwith %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-section-shows">
+    <div class="h1-animation-wrapper mb-3">
+      <div class="h1-animation">
+        <a href="/shows">
+          Shows
+          <span class="link__arrow"></span>
+        </a>
+      </div>
+    </div>
+    <div class="row row-fix">
+      <div class="home-shows-container-new col-md-10">
+        <div class="row row-fix" style="overflow-x: hidden">
+          {% for show in showpages %}
+            <div class="col-sm-12 col-md-4 mt-1 home-news-container-item">
+              {% with show=show.specific %}
+                <div class="">
+                  <div class="card" data-aos="fade-right">
+                    {% with show.show_images.first as show_image %}
+                      {% if show_image %}
+                        <a href="{% pageurl show %}">
+                          {% image show_image.image original as tmp_image %}
+                          <div class="img-center-cropped" style="background-image: url('{{ tmp_image.url }}');"></div>
+                        </a>
+                      {% endif %}
+                    {% endwith %}
+                    {#                  <div class="card-body">{{ show.body|richtext|truncatewords_html:40 }}</div>#}
+                    <div class="card-footer"><a href="{% pageurl show %}">{{ show.title }}</a></div>
+                  </div>
+                </div>
+              {% endwith %}
+            </div>
+          {% endfor %}
+        </div>
+        {#        <div class="offset-md-3"></div>#}
+      </div>
+    </div>
+  </div>
+  {#  <div class="col-2"></div>#}
+
+  <div class="home-section-members">
+    <div class="h1-animation-wrapper mb-3">
+      <div class="h1-animation">
+        <a href="/members">
+          Our team
+          <span class="link__arrow"></span>
+        </a>
+      </div>
+    </div>
+    <div class="gallery-block compact-gallery">
+      <div class="row no-gutters" data-aos="fade-up">
+        {% for people in peoplepages %}
+          {% with people=people.specific %}
+            {% with people.people_images.first as people_image %}
+              {% if people_image %}
+                {% image people_image.image original as tmp_image %}
+                <div class="col-md-6 col-lg-3 col-sm-6 col-6 item zoom-on-hover">
+                  <a class="lightbox" href="{% pageurl people %}">
+                    <img class="img-fluid image center-cropped" src="{{ tmp_image.url }}" style="max-height: 275px" alt="Person">
+                    <span class="description">
+                            <span class="description-heading">{{ people.title }}</span>
+                            <span class="description-body"></span>
+                  </span>
+                  </a>
+                </div>
+              {% endif %}
+            {% endwith %}
+          {% endwith %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

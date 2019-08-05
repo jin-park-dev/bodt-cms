@@ -20,6 +20,52 @@ from show.models import ShowPage
 from puput.models import BlogPage, EntryPage
 
 
+class HomeSGPage(Page):
+
+    body = RichTextField()
+
+    content_panels = Page.content_panels + [
+        FieldPanel('body', classname="full"),
+    ]
+
+    # Event, Other pages to create on Homepage
+    subpage_types = ['AboutPage', 'PeopleIndexPage', 'news.NewsIndexPage',
+                     'show.ShowIndexPage', 'event.EventIndexPage', 'ContactUsPage',
+                     'puput.BlogPage']
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request)
+
+        # print('BlogPage')
+        # print(BlogPage)
+        # newspages = BlogPage.objects.live().order_by('-first_published_at')[0:3]
+        newspages = EntryPage.objects.live().order_by('-date')[0:3]  # Latest 3
+        # print('blogpage')
+        # print(blogpage)
+
+        # newspages = NewsPage.objects.live().order_by('-first_published_at')[0:3]
+        # print(newspages.first().__dict__)
+        context['newspages'] = reversed(newspages) # To get order from last to newest (on the right)
+
+        eventpages = EventPage.objects.live().order_by('-date_post')[0:3]
+        context['eventpages'] = eventpages
+
+        # peoplepages = PeoplePage.objects.live().order_by('-first_published_at')[0:8]
+        # peoplepages = PeoplePage.objects.live().order_by('?')[0:8]
+        # On purpose made it so it can show alumni members.
+        peoplepages = PeoplePage.objects.live().filter(featured=True).order_by('ordering_priority')[0:8]
+        context['peoplepages'] = peoplepages
+
+        # Same as news. Take 3 latest and make order from oldest to newest.
+        showpages = ShowPage.objects.live().order_by('-date')[0:3]
+        context['showpages'] = reversed(showpages)
+
+        return context
+
+    def __str__(self):
+        return self.title
+
+
 class HomePage(Page):
 
     body = RichTextField()
