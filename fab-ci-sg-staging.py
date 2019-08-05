@@ -30,7 +30,7 @@ def _get_latest_source():
     # Get local machine's latest commit
     current_commit = local("git log -n 1 --format=%H", capture=True)
     run(f'git reset --hard {current_commit}')
-
+    run(f'git checkout sg/staging')
 
 def _update_virtualenv():
     if not exists('.venv/bin/pip'):
