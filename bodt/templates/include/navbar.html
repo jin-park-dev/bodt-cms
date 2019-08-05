@@ -21,24 +21,32 @@
         <li class="nav-item">
           <a class="nav-link" href="/">Home</a>
         </li>
+        {% for menu in menuitems %}
         <li class="nav-item">
-          <a class="nav-link" href="/news">News</a>
+          <a class="nav-link" href="{{menu.url}}">{{menu.title}}</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/members">Member</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/shows">Shows</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/events">Events</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/about-us">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact">Contact</a>
-        </li>
+        {% endfor %}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/">Home</a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/news">News</a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/members">Member</a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/shows">Shows</a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/events">Events</a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/about-us">About Us</a>#}
+{#        </li>#}
+{#        <li class="nav-item">#}
+{#          <a class="nav-link" href="/contact">Contact</a>#}
+{#        </li>#}
       </ul>
     </div>
 {#  </div>#}

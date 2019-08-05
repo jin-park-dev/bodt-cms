@@ -60,6 +60,9 @@ class HomeSGPage(Page):
         showpages = ShowPage.objects.live().order_by('-date')[0:3]
         context['showpages'] = reversed(showpages)
 
+        context['menuitems'] = self.get_children().filter(
+            live=True, show_in_menus=True)
+
         return context
 
     def __str__(self):
@@ -105,6 +108,8 @@ class HomePage(Page):
         # Same as news. Take 3 latest and make order from oldest to newest.
         showpages = ShowPage.objects.live().order_by('-date')[0:3]
         context['showpages'] = reversed(showpages)
+        context['menuitems'] = self.get_children().filter(
+            live=True, show_in_menus=True)
 
         return context
 
