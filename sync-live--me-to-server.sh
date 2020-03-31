@@ -7,7 +7,7 @@ echo    # (optional) move to a new line
 today=`date '+%Y_%m_%d__%H_%M_%S'`;
 #seb='bodt.jinis.online';
 TARGET='seb:/home/jin/sites/www.bachatacambridge.com'
-LOCAL_DEV='/Users/jin/Personal/bodt-cms-master'
+LOCAL_DEV=${PWD}
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
     echo "===============Backing server first============="
