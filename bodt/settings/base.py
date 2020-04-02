@@ -221,23 +221,12 @@ PUPUT_AS_PLUGIN = True
 # Wagtail TODO: Put this is dev vs production?
 GA_VIEW_ID = 'ga:191694086'
 
-# Sendgrid
+# Sendgrid. *Disabling as there's so much bot spam... only ! ! !*
 # https://simpleit.rocks/python/django/adding-email-to-django-the-easiest-way/
 
-EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
-
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # This is default for django.
+# EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"  # *Disabling as there's so much bot spam... only ! ! !*
 SENDGRID_API_KEY = config('SENDGRIND_API_PASS')
-
-# Old SMTP attempt.
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER = config('SENDGRIND_API_ID')
-# EMAIL_HOST_PASSWORD = config('SENDGRIND_API_PASS')
-# EMAIL_HOST_USER = 'jinpark.han@gmail.com'
-# EMAIL_HOST_PASSWORD = config('SENDGRIND_API_ID')
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
 
 
 # Wagalytics
@@ -250,7 +239,6 @@ ENV_IS_FOR = config('ENV_IS_FOR')
 
 if ENV_IS_FOR == 'production':
     DEBUG = False
-    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
     SENDGRID_SANDBOX_MODE_IN_DEBUG=False
     SENDGRID_ECHO_TO_STDOUT=True
