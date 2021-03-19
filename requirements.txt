@@ -24,7 +24,7 @@ django-social-share==1.3.2
 django-taggit==1.1.0
 django-treebeard==4.3
 django-widget-tweaks==1.4.5
-djangorestframework==3.10.2
+djangorestframework==3.11.2
 draftjs-exporter==2.1.6
 Fabric3==1.14.post1
 future==0.17.1
