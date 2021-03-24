@@ -60,7 +60,7 @@ python-decouple==3.1
 python-http-client==3.1.0
 pytz==2019.2
 requests==2.22.0
-rsa==4.0
+rsa==4.1
 sendgrid==6.0.5
 simplegeneric==0.8.1
 simplejson==3.16.0
