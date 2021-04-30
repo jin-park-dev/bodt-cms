@@ -71,7 +71,7 @@ tornado==6.0.3
 traitlets==4.3.2
 Unidecode==1.1.1
 uritemplate==3.0.0
-urllib3==1.25.3
+urllib3==1.25.8
 wagalytics==1.0
 wagtail==2.6
 wagtail-embed-videos==0.4.2
